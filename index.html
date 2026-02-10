@@ -1,82 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموسوعة الكبرى لتفسير الأحلام</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --dark-royal: #050c1a; --gold-leaf: #c5a059; --accent-gold: #d4af37; --bg-soft: #f8f9fa; }
+        body { background-color: var(--bg-soft); font-family: 'Tajawal', sans-serif; color: var(--dark-royal); margin: 0; }
+        
+        .royal-header { background: linear-gradient(135deg, #050c1a 0%, #0f172a 100%); color: white; padding: 70px 20px; text-align: center; border-bottom: 4px solid var(--gold-leaf); position: relative; }
+        .royal-header h1 { font-family: 'Amiri', serif; font-size: 3rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 10px; }
+
+        /* منطقة البحث: كلمة "رؤيا" ثابتة وبسيطة */
+        .search-section { max-width: 700px; margin: -40px auto 30px; padding: 0 20px; position: relative; z-index: 5; }
+        .search-bar { border-radius: 50px !important; padding: 20px 35px !important; border: 2px solid var(--gold-leaf) !important; font-size: 1.4rem !important; box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important; text-align: center; background: white !important; }
+
+        /* مساحات الإعلانات: فارغة واحترافية بدون نصوص ظاهرة */
+        .ad-wrap { max-width: 100%; margin: 20px auto; display: flex; align-items: center; justify-content: center; min-height: 90px; background: rgba(0,0,0,0.02); border-radius: 12px; }
+        .ad-hidden-text { color: transparent; user-select: none; }
+
+        .main-content { background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 50px; border: 1px solid #eee; }
+        .nav-tabs-royal { border: none !important; display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .nav-link { border: 2px solid #f0f0f0 !important; border-radius: 50px !important; color: var(--dark-royal) !important; font-weight: 700; padding: 10px 25px !important; background: #fff; }
+        .nav-link.active { background: var(--dark-royal) !important; color: var(--accent-gold) !important; border-color: var(--dark-royal) !important; }
+
+        .interpretation-display { font-family: 'Amiri', serif; font-size: 1.8rem; line-height: 1.8; color: #2d3436; padding: 25px; background: #fffdf9; border-right: 6px solid var(--gold-leaf); border-radius: 10px; min-height: 250px; }
+        .mufasir-label { font-size: 1.1rem; color: var(--gold-leaf); font-weight: 900; margin-bottom: 15px; display: block; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
+
+        footer { background: #050c1a; color: #777; padding: 25px; border-top: 3px solid var(--gold-leaf); }
+        @media (max-width: 600px) { .royal-header h1 { font-size: 2rem; } .nav-link { padding: 8px 15px !important; font-size: 0.85rem; } }
+    </style>
+</head>
+<body>
+
+<div class="ad-wrap"><span class="ad-hidden-text">AD1</span></div>
+
+<header class="royal-header">
+    <h1>الموسوعة الكبرى لتفسير الأحلام</h1>
+    <p>بوابتك الموثوقة لفك رموز الرؤى والمنامات</p>
+</header>
+
+<div class="search-section">
+    <input type="text" id="searchInput" class="form-control search-bar" placeholder="رؤيا...">
+</div>
+
+<div class="container">
+    <div class="ad-wrap" style="height: 60px;"><span class="ad-hidden-text">AD2</span></div>
+
+    <div class="main-content">
+        <ul class="nav nav-pills nav-tabs-royal">
+            <li class="nav-item"><button class="nav-link active" onclick="changeSource('sirin', this)">ابن سيرين</button></li>
+            <li class="nav-item"><button class="nav-link" onclick="changeSource('nabulsi', this)">النابلسي</button></li>
+            <li class="nav-item"><button class="nav-link" onclick="changeSource('shahin', this)">ابن شاهين</button></li>
+        </ul>
+
+        <div id="displayArea">
+            <span id="mufasirTitle" class="mufasir-label">مجلد الإمام ابن سيرين</span>
+            <div id="resultText" class="interpretation-display">
+                <p class="text-center text-muted" style="font-family:Tajawal; font-size:1.1rem; padding-top:60px;">اكتب الكلمة الأساسية للرؤيا لبدء البحث..</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-wrap" style="height: 250px;"><span class="ad-hidden-text">AD3</span></div>
+</div>
+
+<footer>
+    <div class="container text-center">
+        <p>© 2026 الموسوعة الكبرى لتفسير الأحلام</p>
+    </div>
+</footer>
+
 <script>
     let currentSource = 'sirin';
     let data = { sirin: [], nabulsi: [], shahin: [] };
 
-    // تحميل البيانات مع معالجة الأخطاء لضمان استمرارية الموقع
     async function loadData() {
+        const v = Math.random();
         try {
-            const [s, n, h] = await Promise.all([
-                fetch('data_sirin.json').then(r => r.ok ? r.json() : []),
-                fetch('data_nabulsi.json').then(r => r.ok ? r.json() : []),
-                fetch('data_shahin.json').then(r => r.ok ? r.json() : [])
-            ]);
-            data.sirin = s;
-            data.nabulsi = n;
-            data.shahin = h;
-            console.log("تم تحميل كافة المجلدات بنجاح");
-        } catch (e) { 
-            console.error("حدث خطأ في جلب ملفات البيانات، تأكد من وجود الملفات في GitHub"); 
-        }
+            data.sirin = await fetch(`data_sirin.json?v=${v}`).then(r => r.json());
+            data.nabulsi = await fetch(`data_nabulsi.json?v=${v}`).then(r => r.json());
+            data.shahin = await fetch(`data_shahin.json?v=${v}`).then(r => r.json());
+        } catch (e) { console.error("Data Load Error"); }
     }
 
-    function changeSource(src) {
+    function changeSource(src, btn) {
         currentSource = src;
-        // تحديث شكل الأزرار
         document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
-        if(event) event.target.classList.add('active');
-        
-        const names = { 
-            sirin: 'تفسير الإمام ابن سيرين', 
-            nabulsi: 'تفسير الشيخ النابلسي', 
-            shahin: 'تفسير العالم ابن شاهين' 
-        };
-        document.getElementById('mufasirTitle').innerText = names[src];
-        search(); // إعادة البحث فوراً عند تغيير المفسر
+        btn.classList.add('active');
+        const titles = { sirin: 'مجلد الإمام ابن سيرين', nabulsi: 'مجلد الشيخ النابلسي', shahin: 'مجلد العالم ابن شاهين' };
+        document.getElementById('mufasirTitle').innerText = titles[src];
+        search();
     }
 
-    // وظيفة التنظيف لجعل البحث ذكياً (إزالة الـ التعريف والهمزات)
-    function cleanWord(word) {
-        if (!word) return "";
-        return word.replace(/^(ال)/, "")
-                   .replace(/[أإآا]/g, "ا")
-                   .replace(/ة/g, "ه")
-                   .trim();
+    function clean(t) {
+        return t ? t.replace(/^ال/, "").replace(/[أإآا]/g, "ا").replace(/ة/g, "ه").trim() : "";
     }
 
     function search() {
         const query = document.getElementById('searchInput').value.trim();
         const resDiv = document.getElementById('resultText');
-        
         if (!query) {
-            resDiv.innerHTML = `<p class="text-center text-muted fs-5" style="font-family:'Tajawal'">اكتب الكلمة الأساسية للرؤيا لبدء البحث..</p>`;
-            resDiv.classList.add('text-center');
+            resDiv.innerHTML = '<p class="text-center text-muted" style="font-family:Tajawal; font-size:1.1rem; padding-top:60px;">اكتب الكلمة الأساسية للرؤيا لبدء البحث..</p>';
             return;
         }
-
-        const cleanQuery = cleanWord(query);
-        
-        // البحث في المجلد المختار حالياً
-        const found = data[currentSource].find(item => {
-            const cleanEntry = cleanWord(item.word);
-            return cleanEntry === cleanQuery || item.word.includes(query) || query.includes(item.word);
-        });
-        
+        const cleanQuery = clean(query);
+        const found = data[currentSource].find(item => clean(item.word) === cleanQuery || item.word.includes(query));
         if (found) {
-            resDiv.classList.remove('text-center');
-            resDiv.innerHTML = `<strong style="color:var(--royal-blue)">تفسير رمز (${query}) عند ${document.getElementById('mufasirTitle').innerText}:</strong><br>${found.interpretation}`;
+            resDiv.innerHTML = `<div style="color:var(--dark-royal); font-weight:bold; margin-bottom:10px; border-bottom: 2px solid var(--gold-leaf); display:inline-block;">تفسير رمز (${query}):</div><br>${found.interpretation}`;
         } else {
-            resDiv.classList.add('text-center');
-            resDiv.innerHTML = `
-                <p class="text-danger py-4" style="font-family:'Tajawal'">
-                    عذراً، رمز "<strong>${query}</strong>" غير متوفر في هذا المجلد.<br>
-                    <small class="text-muted">نصيحة: جرب الضغط على مفسر آخر في الأعلى أو كتابة الكلمة بدون "الـ".</small>
-                </p>`;
+            resDiv.innerHTML = `<p class="text-center text-danger" style="font-family:Tajawal; font-size:1.2rem; padding-top:60px;">عذراً، هذا الرمز غير موجود في هذا المجلد حالياً.</p>`;
         }
     }
-
     document.getElementById('searchInput').addEventListener('input', search);
-    window.onload = loadData; // تحميل البيانات بمجرد فتح الصفحة
+    window.onload = loadData;
 </script>
+</body>
+</html>
+
 
 
 

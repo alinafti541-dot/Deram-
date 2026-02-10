@@ -3,144 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفسير الأحلام - ابن سيرين</title>
+    <title>الموسوعة الكبرى لتفسير الأحلام</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f4f7f6;
-            font-family: 'Tajawal', sans-serif;
-            color: #2d3436;
+        :root {
+            --dark-royal: #050c1a;
+            --gold-leaf: #c5a059;
+            --accent-gold: #d4af37;
+            --bg-soft: #f8f9fa;
         }
-        .header-box {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 5px solid #d4af37;
-        }
-        .header-box h1 { font-family: 'Amiri', serif; font-size: 3rem; }
         
-        .search-container {
-            max-width: 600px;
-            margin: -30px auto 30px;
+        body {
+            background-color: var(--bg-soft);
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+        }
+
+        /* --- مساحة الإعلان العلوية --- */
+        .top-ad-zone {
+            background-color: #eee;
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .royal-header {
+            background: linear-gradient(135deg, #050c1a 0%, #0f172a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold-leaf);
+        }
+        
+        .royal-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin: 0;
+        }
+
+        .search-section {
+            max-width: 700px;
+            margin: -25px auto 30px;
+            padding: 0 20px;
+            z-index: 10;
             position: relative;
         }
-        .search-input {
-            border-radius: 30px;
-            padding: 15px 25px;
-            border: 2px solid #d4af37;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        
+        .search-bar {
+            border-radius: 50px !important;
+            padding: 18px 25px !important;
+            border: 2px solid var(--gold-leaf) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
         }
-        .main-card {
+        
+        .search-btn {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--dark-royal);
+            border: none;
+            color: var(--accent-gold);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+        }
+
+        .main-content {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            min-height: 400px;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
         }
-        .result-title {
-            color: #b21f1f;
-            border-bottom: 2px solid #f1f1f1;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+
+        .interpretation-display {
             font-family: 'Amiri', serif;
-            font-size: 2rem;
-        }
-        .result-text {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             line-height: 1.8;
-            text-align: justify;
+            padding: 20px;
+            background: #fffaf0;
+            border-right: 5px solid var(--gold-leaf);
+            border-radius: 8px;
+            min-height: 200px;
         }
-        .loading { display: none; color: #d4af37; text-align: center; }
+
+        .nav-link.active {
+            background: var(--dark-royal) !important;
+            color: var(--accent-gold) !important;
+        }
+
+        .loading-indicator { display: none; text-align: center; padding: 20px; }
     </style>
 </head>
 <body>
 
-<div class="header-box">
-    <h1>تفسير الأحلام لابن سيرين</h1>
-    <p>الموسوعة الشاملة للحروف والرموز</p>
+<div class="top-ad-zone">
+    <span>مساحة إعلانية (Ad Banner)</span>
+    </div>
+
+<header class="royal-header">
+    <h1><i class="fas fa-book-open"></i> الموسوعة الكبرى لتفسير الأحلام</h1>
+    <p>تفسير دقيق وشامل لرموز الرؤى</p>
+</header>
+
+<div class="search-section">
+    <div class="position-relative">
+        <input type="text" id="searchInput" class="form-control search-bar" placeholder="ابحث عن رمز (مثلاً: البحر، الام، الاسد)..." onkeyup="if(event.key === 'Enter') search()">
+        <button class="search-btn" onclick="search()">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
 </div>
 
 <div class="container">
-    <div class="search-container">
-        <input type="text" id="searchInput" class="form-control search-input" placeholder="ابحث عن رمز (مثلاً: أسد، أب، ماء)..." onkeyup="if(event.key === 'Enter') search()">
-    </div>
+    <div class="main-content">
+        <ul class="nav nav-pills justify-content-center gap-2 mb-4">
+            <li class="nav-item"><button id="btn-sirin" class="nav-link active" onclick="changeSource('sirin')">ابن سيرين</button></li>
+            <li class="nav-item"><button id="btn-nabulsi" class="nav-link" onclick="changeSource('nabulsi')">النابلسي</button></li>
+            <li class="nav-item"><button id="btn-shahin" class="nav-link" onclick="changeSource('shahin')">ابن شاهين</button></li>
+        </ul>
 
-    <div class="main-card mb-5">
-        <div id="loading" class="loading">جاري البحث في المجلد...</div>
-        <div id="resultArea">
-            <div class="text-center pt-5 opacity-50">
-                <p>ابدأ بكتابة الرمز الذي رأيته في منامك</p>
+        <div id="displayArea">
+            <div id="resultText" class="interpretation-display">
+                <div class="text-center opacity-50 pt-4">
+                    <i class="fas fa-search fa-2x mb-2"></i>
+                    <p>أدخل الكلمة للبحث في الموسوعة</p>
+                </div>
             </div>
+        </div>
+        
+        <div class="loading-indicator" id="loadingIndicator">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
         </div>
     </div>
 </div>
 
 <script>
-    let sirinData = [];
+    let data = { sirin: [], nabulsi: [], shahin: [] };
+    let currentSource = 'sirin';
 
-    // جلب البيانات من ملف JSON
     async function loadData() {
         try {
-            const response = await fetch('data_sirin.json');
-            sirinData = await response.json();
-            console.log("تم تحميل بيانات ابن سيرين بنجاح");
-        } catch (error) {
-            console.error("خطأ في تحميل ملف data_sirin.json", error);
-        }
+            const [s, n, h] = await Promise.all([
+                fetch('data_sirin.json').then(r => r.json()),
+                fetch('data_nabulsi.json').then(r => r.json()),
+                fetch('data_shahin.json').then(r => r.json())
+            ]);
+            data = { sirin: s, nabulsi: n, shahin: h };
+        } catch (e) { console.error("خطأ في التحميل", e); }
     }
 
-    // تنظيف النص للبحث الذكي
-    function cleanText(t) {
-        if (!t) return '';
-        return t.replace(/^ال/, "")
-                .replace(/[أإآا]/g, "ا")
-                .replace(/ة/g, "ه")
-                .replace(/ى/g, "ي")
-                .trim();
+    function normalizeText(text) {
+        if (!text) return '';
+        return text.trim()
+            .replace(/^ال/, '') 
+            .replace(/[أإآا]/g, 'ا')
+            .replace(/ة/g, 'ه')
+            .replace(/ى/g, 'ي')
+            .replace(/\s+/g, '');
     }
 
     function search() {
         const query = document.getElementById('searchInput').value.trim();
-        const resultArea = document.getElementById('resultArea');
-        const loader = document.getElementById('loading');
+        const resultDiv = document.getElementById('resultText');
+        const loader = document.getElementById('loadingIndicator');
 
-        if (!query) return;
+        if (!query || query.length < 2) return;
 
         loader.style.display = 'block';
-        resultArea.innerHTML = '';
+        resultDiv.innerHTML = '';
 
-        // تأخير بسيط لمحاكاة البحث
         setTimeout(() => {
-            const cleanQuery = cleanText(query);
-            const found = sirinData.find(item => 
-                cleanText(item.word) === cleanQuery || 
-                item.word.includes(query) ||
-                cleanText(item.word).includes(cleanQuery)
-            );
+            const cleanQuery = normalizeText(query);
+            
+            // بحث ذكي في العناوين أولاً ثم التفسير
+            let matches = data[currentSource].filter(item => {
+                const cleanWord = normalizeText(item.word);
+                return cleanWord === cleanQuery || cleanWord.includes(cleanQuery);
+            });
+
+            if (matches.length === 0) {
+                matches = data[currentSource].filter(item => 
+                    normalizeText(item.interpretation).includes(cleanQuery)
+                );
+            }
 
             loader.style.display = 'none';
 
-            if (found) {
-                resultArea.innerHTML = `
-                    <h2 class="result-title">تفسير رمز: ${found.word}</h2>
-                    <div class="result-text">${found.interpretation}</div>
-                `;
+            if (matches.length > 0) {
+                resultDiv.innerHTML = matches.map(found => `
+                    <div class="mb-4 border-bottom pb-3">
+                        <h4 class="text-primary" style="font-family:'Amiri';">رمز: ${found.word}</h4>
+                        <div style="font-size:1.4rem;">${found.interpretation}</div>
+                    </div>
+                `).join('');
             } else {
-                resultArea.innerHTML = `
-                    <div class="text-center pt-5">
-                        <h4>عذراً، لم نجد هذا الرمز</h4>
-                        <p>تأكد من كتابة الكلمة بشكل صحيح أو جرب رمزاً آخر</p>
-                    </div>`;
+                resultDiv.innerHTML = `<div class="text-center pt-4">لم نجد تفسيراً دقيقاً لـ "${query}". حاول كتابة كلمة أخرى.</div>`;
             }
         }, 300);
     }
 
-    // تشغيل التحميل عند فتح الصفحة
+    function changeSource(src) {
+        currentSource = src;
+        document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-' + src).classList.add('active');
+        search();
+    }
+
     window.onload = loadData;
 </script>
-
 </body>
 </html>

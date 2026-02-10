@@ -203,14 +203,19 @@
             display: block;
         }
 
-        .info-box {
-            background: #e3f2fd;
-            border-right: 4px solid #2196f3;
+        .success-box {
+            background: #e8f5e9;
+            border-right: 4px solid #4caf50;
             padding: 12px;
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 13px;
-            color: #1565c0;
+            color: #2e7d32;
+            display: none;
+        }
+
+        .success-box.show {
+            display: block;
         }
     </style>
 </head>
@@ -221,21 +226,11 @@
             <p>استخدم قوة الذكاء الاصطناعي لفهم أحلامك</p>
         </div>
 
-        <div class="info-box">
-            <strong>ملاحظة:</strong> يرجى إدخال مفتاح API الخاص بك في الإعدادات قبل استخدام الخدمة.
+        <div class="success-box" id="successBox">
+            ✓ تم الاتصال بالخادم بنجاح. مفتاح API محفوظ بأمان.
         </div>
 
         <form id="dreamForm">
-            <div class="form-group">
-                <label for="apiKey">مفتاح API (Qwen):</label>
-                <input 
-                    type="password" 
-                    id="apiKey" 
-                    placeholder="أدخل مفتاح API الخاص بك"
-                    style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px;"
-                >
-            </div>
-
             <div class="form-group">
                 <label for="dreamText">صف حلمك:</label>
                 <textarea 
@@ -267,83 +262,63 @@
     <script>
         const form = document.getElementById('dreamForm');
         const dreamText = document.getElementById('dreamText');
-        const apiKey = document.getElementById('apiKey');
         const loading = document.getElementById('loading');
         const result = document.getElementById('result');
         const resultText = document.getElementById('resultText');
         const errorDiv = document.getElementById('error');
+        const successBox = document.getElementById('successBox');
 
-        // تحميل مفتاح API من LocalStorage
+        // عرض رسالة النجاح عند تحميل الصفحة
         window.addEventListener('load', () => {
-            const savedKey = localStorage.getItem('qwenApiKey');
-            if (savedKey) {
-                apiKey.value = savedKey;
-            }
+            successBox.classList.add('show');
+            setTimeout(() => {
+                successBox.classList.remove('show');
+            }, 3000);
         });
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const key = apiKey.value.trim();
             const dream = dreamText.value.trim();
-
-            if (!key) {
-                showError('يرجى إدخال مفتاح API');
-                return;
-            }
 
             if (!dream) {
                 showError('يرجى وصف حلمك');
                 return;
             }
 
-            // حفظ مفتاح API
-            localStorage.setItem('qwenApiKey', key);
-
-            await interpretDream(key, dream);
+            await interpretDream(dream);
         });
 
-        async function interpretDream(apiKey, dreamDescription) {
+        async function interpretDream(dreamDescription) {
             loading.classList.add('show');
             result.classList.remove('show');
             errorDiv.classList.remove('show');
 
             try {
-                const response = await fetch('https://api.openrouter.ai/api/v1/chat/completions', {
+                // إرسال الطلب إلى الخادم الخاص بك
+                // يجب استبدال /api/interpret-dream بـ رابط الخادم الفعلي
+                const response = await fetch('/api/interpret-dream', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${apiKey}`
                     },
                     body: JSON.stringify({
-                        model: 'qwen/qwen-2-7b-instruct',
-                        messages: [
-                            {
-                                role: 'system',
-                                content: 'أنت مفسر أحلام متخصص وذو خبرة. قدم تفسيراً عميقاً وحساساً للحلم المقدم، مع الأخذ بعين الاعتبار الرموز والعواطف والسياق النفسي. كن إيجابياً وبناءً في تفسيرك.'
-                            },
-                            {
-                                role: 'user',
-                                content: `يرجى تفسير هذا الحلم بالتفصيل:\n\n${dreamDescription}`
-                            }
-                        ],
-                        max_tokens: 1000,
-                        temperature: 0.7
+                        dream: dreamDescription
                     })
                 });
 
                 if (!response.ok) {
                     const errorData = await response.json();
-                    throw new Error(errorData.error?.message || 'حدث خطأ في الاتصال بالخدمة');
+                    throw new Error(errorData.error || 'حدث خطأ في الاتصال بالخدمة');
                 }
 
                 const data = await response.json();
-                const interpretation = data.choices[0].message.content;
+                const interpretation = data.interpretation;
 
                 resultText.textContent = interpretation;
                 result.classList.add('show');
             } catch (error) {
-                showError(error.message || 'حدث خطأ أثناء تفسير الحلم. تأكد من صحة مفتاح API.');
+                showError(error.message || 'حدث خطأ أثناء تفسير الحلم. يرجى المحاولة لاحقاً.');
             } finally {
                 loading.classList.remove('show');
             }

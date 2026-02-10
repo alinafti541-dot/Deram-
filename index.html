@@ -80,6 +80,88 @@
             font-size: 1.5rem;
         }
         
+        /* مساحات الإعلانات */
+        .ad-space {
+            background: linear-gradient(135deg, rgba(255, 250, 240, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-space::before {
+            content: "إعلان";
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--gold-leaf);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .ad-space:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .ad-content {
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark-royal);
+            font-weight: bold;
+            padding: 10px;
+        }
+        
+        .ad-content i {
+            font-size: 2rem;
+            color: var(--gold-leaf);
+            margin-bottom: 10px;
+        }
+        
+        .ad-content p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .ad-content small {
+            font-weight: normal;
+            color: #666;
+            margin-top: 5px;
+            font-size: 0.85rem;
+        }
+        
+        .ad-horizontal {
+            max-width: 100%;
+            height: 100px;
+        }
+        
+        .ad-vertical {
+            max-width: 300px;
+            height: 250px;
+        }
+        
+        .ad-square {
+            max-width: 300px;
+            height: 250px;
+        }
+        
+        .ad-banner {
+            max-width: 100%;
+            height: 100px;
+            margin: 15px auto;
+        }
+        
         .search-section {
             max-width: 700px;
             margin: -30px auto 40px;
@@ -129,20 +211,6 @@
         .search-btn:hover {
             background-color: var(--gold-leaf);
             color: var(--dark-royal);
-        }
-        
-        .ad-wrap {
-            max-width: 100%;
-            margin: 15px auto;
-            min-height: 90px;
-            background: linear-gradient(to right, rgba(197, 160, 89, 0.1), rgba(5, 12, 26, 0.05));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed var(--gold-leaf);
-            color: var(--dark-royal);
-            font-weight: bold;
         }
         
         .main-content {
@@ -217,51 +285,6 @@
         
         .mufasir-label i {
             font-size: 1.3rem;
-        }
-        
-        .popular-symbols {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-        }
-        
-        .popular-symbols h4 {
-            color: var(--dark-royal);
-            border-bottom: 2px solid var(--gold-leaf);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-family: 'Amiri', serif;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .symbol-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-        
-        .symbol-tag {
-            background: var(--bg-soft);
-            border: 1px solid #e0e0e0;
-            border-radius: 50px;
-            padding: 8px 18px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--dark-royal);
-        }
-        
-        .symbol-tag:hover {
-            background: var(--gold-leaf);
-            color: white;
-            border-color: var(--gold-leaf);
-            transform: translateY(-2px);
         }
         
         .search-history {
@@ -402,6 +425,42 @@
             gap: 10px;
         }
         
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        
+        .ad-sidebar {
+            width: 300px;
+            margin-left: 20px;
+        }
+        
+        .content-with-ads {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .main-interpretation {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        @media (max-width: 992px) {
+            .ad-sidebar {
+                width: 100%;
+                margin-left: 0;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .content-with-ads {
+                flex-direction: column;
+            }
+        }
+        
         @media (max-width: 768px) {
             .royal-header h1 {
                 font-size: 2.2rem;
@@ -422,10 +481,30 @@
                 padding: 15px 20px !important;
                 font-size: 1.1rem !important;
             }
+            
+            .ad-space {
+                padding: 15px;
+            }
+            
+            .ad-vertical, .ad-square {
+                max-width: 100%;
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
+
+<!-- إعلان في أعلى الصفحة -->
+<div class="container">
+    <div class="ad-space ad-banner">
+        <div class="ad-content">
+            <i class="fas fa-gem"></i>
+            <p>تفسير الأحلام بكل دقة وموثوقية</p>
+            <small>بوابة الأحلام الأكثر شمولاً في العالم العربي</small>
+        </div>
+    </div>
+</div>
 
 <header class="royal-header">
     <div class="header-icons">
@@ -445,75 +524,117 @@
     </div>
 </div>
 
+<!-- إعلان تحت شريط البحث -->
 <div class="container">
-    <div class="ad-wrap">
-        <i class="fas fa-gem me-2"></i> الموسوعة الأكثر شمولاً لتفسير الأحلام - تجربة بحث محسنة
+    <div class="ad-space ad-horizontal">
+        <div class="ad-content">
+            <i class="fas fa-ad"></i>
+            <p>مساحة إعلانية متاحة للشركات الراعية</p>
+            <small>للإعلان في موقعنا يرجى التواصل على advertising@dreams.com</small>
+        </div>
     </div>
+</div>
 
-    <div class="main-content">
-        <ul class="nav nav-pills nav-tabs-royal">
-            <li class="nav-item">
-                <button id="btn-sirin" class="nav-link active" onclick="changeSource('sirin')">
-                    <i class="fas fa-user-graduate"></i> ابن سيرين
-                </button>
-            </li>
-            <li class="nav-item">
-                <button id="btn-nabulsi" class="nav-link" onclick="changeSource('nabulsi')">
-                    <i class="fas fa-user-tie"></i> النابلسي
-                </button>
-            </li>
-            <li class="nav-item">
-                <button id="btn-shahin" class="nav-link" onclick="changeSource('shahin')">
-                    <i class="fas fa-user-circle"></i> ابن شاهين
-                </button>
-            </li>
-        </ul>
-
-        <div id="displayArea">
-            <span id="mufasirTitle" class="mufasir-label">
-                <i class="fas fa-book"></i> مجلد الإمام ابن سيرين
-            </span>
-            <div id="resultText" class="interpretation-display">
-                <div class="initial-state">
-                    <i class="fas fa-dream"></i>
-                    <h4 style="color: var(--dark-royal); margin-bottom: 15px;">مرحباً بك في موسوعة تفسير الأحلام</h4>
-                    <p style="font-family: 'Tajawal', sans-serif; font-size: 1.1rem;">
-                        اكتب رمزاً من رؤياك في شريط البحث أعلاه، أو اختر أحد الرموز الشائعة أدناه للحصول على التفسير من مجلدات أئمة التفسير.
-                    </p>
+<div class="container">
+    <div class="content-with-ads">
+        <!-- إعلان جانبي -->
+        <div class="ad-sidebar">
+            <div class="ad-space ad-vertical">
+                <div class="ad-content">
+                    <i class="fas fa-star"></i>
+                    <p>الموسوعة الأشمل لتفسير الأحلام</p>
+                    <small>أكثر من 5000 رمز مُفسر</small>
+                </div>
+            </div>
+            
+            <div class="ad-space ad-square" style="margin-top: 20px;">
+                <div class="ad-content">
+                    <i class="fas fa-hands-helping"></i>
+                    <p>ادعم الموسوعة</p>
+                    <small>ساعدنا في تطوير المحتوى</small>
                 </div>
             </div>
         </div>
         
-        <div class="loading-indicator" id="loadingIndicator">
-            <i class="fas fa-spinner fa-spin"></i>
-            <p>جاري البحث في المجلدات...</p>
-        </div>
-        
-        <div class="info-box">
-            <h5><i class="fas fa-lightbulb"></i> نصائح للتفسير الصحيح</h5>
-            <p style="font-size: 0.95rem; margin-bottom: 0;">
-                • ركز على الرمز الرئيسي في الحلم وليس التفاصيل الصغيرة.<br>
-                • ضع في اعتبارك سياق الرؤيا وحالتك النفسية وقت الرؤيا.<br>
-                • الأحلام قد تكون انعكاساً للتفكير اليومي أو هموم النفس.<br>
-                • تفسير الأحلام فن وعلم، وتفسيرات العلماء هي أقرب للصواب.
-            </p>
+        <!-- المحتوى الرئيسي -->
+        <div class="main-interpretation">
+            <div class="main-content">
+                <ul class="nav nav-pills nav-tabs-royal">
+                    <li class="nav-item">
+                        <button id="btn-sirin" class="nav-link active" onclick="changeSource('sirin')">
+                            <i class="fas fa-user-graduate"></i> ابن سيرين
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="btn-nabulsi" class="nav-link" onclick="changeSource('nabulsi')">
+                            <i class="fas fa-user-tie"></i> النابلسي
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="btn-shahin" class="nav-link" onclick="changeSource('shahin')">
+                            <i class="fas fa-user-circle"></i> ابن شاهين
+                        </button>
+                    </li>
+                </ul>
+
+                <div id="displayArea">
+                    <span id="mufasirTitle" class="mufasir-label">
+                        <i class="fas fa-book"></i> مجلد الإمام ابن سيرين
+                    </span>
+                    <div id="resultText" class="interpretation-display">
+                        <div class="initial-state">
+                            <i class="fas fa-dream"></i>
+                            <h4 style="color: var(--dark-royal); margin-bottom: 15px;">مرحباً بك في موسوعة تفسير الأحلام</h4>
+                            <p style="font-family: 'Tajawal', sans-serif; font-size: 1.1rem;">
+                                اكتب رمزاً من رؤياك في شريط البحث أعلاه للحصول على التفسير من مجلدات أئمة التفسير.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading-indicator" id="loadingIndicator">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>جاري البحث في المجلدات...</p>
+                </div>
+                
+                <!-- إعلان داخل المحتوى -->
+                <div class="ad-space ad-horizontal" style="margin-top: 30px;">
+                    <div class="ad-content">
+                        <i class="fas fa-book-reader"></i>
+                        <p>مجلدات تفسير الأحلام الأصلية</p>
+                        <small>نقدم التفسير من مصادر موثوقة</small>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h5><i class="fas fa-lightbulb"></i> نصائح للتفسير الصحيح</h5>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">
+                        • ركز على الرمز الرئيسي في الحلم وليس التفاصيل الصغيرة.<br>
+                        • ضع في اعتبارك سياق الرؤيا وحالتك النفسية وقت الرؤيا.<br>
+                        • الأحلام قد تكون انعكاساً للتفكير اليومي أو هموم النفس.<br>
+                        • تفسير الأحلام فن وعلم، وتفسيرات العلماء هي أقرب للصواب.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="search-history" id="searchHistory">
+                <h4>
+                    <span><i class="fas fa-history"></i> تاريخ البحث</span>
+                    <button class="clear-history" onclick="clearHistory()">مسح التاريخ</button>
+                </h4>
+                <div class="history-items" id="historyItems">
+                    <!-- سيتم تعبئتها بواسطة الجافاسكربت -->
+                </div>
+            </div>
         </div>
     </div>
     
-    <div class="popular-symbols">
-        <h4><i class="fas fa-fire"></i> رموز شائعة في التفسير</h4>
-        <div class="symbol-tags" id="popularSymbols">
-            <!-- سيتم تعبئتها بواسطة الجافاسكربت -->
-        </div>
-    </div>
-    
-    <div class="search-history" id="searchHistory">
-        <h4>
-            <span><i class="fas fa-history"></i> تاريخ البحث</span>
-            <button class="clear-history" onclick="clearHistory()">مسح التاريخ</button>
-        </h4>
-        <div class="history-items" id="historyItems">
-            <!-- سيتم تعبئتها بواسطة الجافاسكربت -->
+    <!-- إعلان في نهاية الصفحة -->
+    <div class="ad-space ad-banner" style="margin: 40px auto;">
+        <div class="ad-content">
+            <i class="fas fa-award"></i>
+            <p>الموسوعة الأكثر موثوقية لتفسير الأحلام</p>
+            <small>نلتزم بدقة المعلومات وأصالتها</small>
         </div>
     </div>
 </div>
@@ -528,40 +649,46 @@
 </footer>
 
 <script>
-    // بيانات الرموز الشائعة
-    const popularSymbols = [
-        "ماء", "نار", "أسد", "ثعبان", "طائر", "سمك", "خاتم", "ذهب", "فضة",
-        "بيت", "سفر", "موت", "زواج", "ولد", "بحر", "سفينة", "قمح", "عسل",
-        "لبن", "قميص", "سيف", "تاج", "شمس", "قمر", "نجوم", "مطر", "جبل"
-    ];
-    
     // بيانات تجريبية للأحلام (ستستبدل بالبيانات الفعلية من JSON)
     let data = {
         sirin: [
-            { word: "ماء", interpretation: "رؤية الماء في المنام تدل على الحياة والعلم والمال، فالماء العذب خير وبركة، والماء الكدر همّ ومرض." },
-            { word: "نار", interpretation: "النار في المنام تدل على القوة والسلطان إن كانت مسيطرة عليها، وتدل على الفتنة والعداوة إن كانت مضرة." },
-            { word: "أسد", interpretation: "الأسد في المنام يدل على السلطان الجائر أو الرجل الشجاع، وقد تدل على العزة والقوة للناظر." },
-            { word: "ثعبان", interpretation: "الثعبان في المنام عدوّ مخاتل، فإن قتلته انقطعت عداوته، وإن هربت منـه فستقع في عداوة." }
+            { word: "ماء", interpretation: "رؤية الماء في المنام تدل على الحياة والعلم والمال، فالماء العذب خير وبركة، والماء الكدر همّ ومرض. ومن رأى أنه يشرب ماء عذباً فهو خير وبركة، وإن كان الماء كدراً فهو همّ ومرض." },
+            { word: "نار", interpretation: "النار في المنام تدل على القوة والسلطان إن كانت مسيطرة عليها، وتدل على الفتنة والعداوة إن كانت مضرة. ومن رأى ناراً تأججت في بيته فإنها تدل على العداوة من أهله." },
+            { word: "أسد", interpretation: "الأسد في المنام يدل على السلطان الجائر أو الرجل الشجاع، وقد تدل على العزة والقوة للناظر. ومن رأى أنه يركب أسداً فإنه يغلب عدواً قوياً." },
+            { word: "ثعبان", interpretation: "الثعبان في المنام عدوّ مخاتل، فإن قتلته انقطعت عداوته، وإن هربت منـه فستقع في عداوة. ومن رأى ثعباناً في بيته فهو عدو من أهل بيته." },
+            { word: "ذهب", interpretation: "الذهب في المنام يدل على المال الحرام إن كان مصنوعاً، ويدل على العلم النافع إن كان ذهباً خاماً. ومن رأى أنه يلبس ذهباً فإنه يصيبه همّ وغم." }
         ],
         nabulsi: [
-            { word: "ماء", interpretation: "الماء في المنام يدل على الإسلام والعلم، فمن شرب ماء عذباً نال علماً نافعاً، والماء الكثير بحر علم أو دنيا واسعة." },
-            { word: "نار", interpretation: "رؤية النار إن كانت هادئة فهي محبة وقرب من الله، وإن كانت متأججة فهي فتنة وهمّ وعداوة." },
-            { word: "ذهب", interpretation: "الذهب في المنام مال حرام إن كان مصنوعاً، والعلم النافع إن كان ذهباً خاماً." }
+            { word: "ماء", interpretation: "الماء في المنام يدل على الإسلام والعلم، فمن شرب ماء عذباً نال علماً نافعاً، والماء الكثير بحر علم أو دنيا واسعة. ومن رأى ماء جارياً فإنه يدل على الرزق المتجدد." },
+            { word: "نار", interpretation: "رؤية النار إن كانت هادئة فهي محبة وقرب من الله، وإن كانت متأججة فهي فتنة وهمّ وعداوة. ومن رأى أنه يحمل ناراً فإنه يحمل همّاً." },
+            { word: "ذهب", interpretation: "الذهب في المنام مال حرام إن كان مصنوعاً، والعلم النافع إن كان ذهباً خاماً. ومن رأى أنه يعطى ذهباً فإنه يعطى علماً نافعاً." },
+            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة أو الدين، فمن رأى بيتاً جديداً فإنه يتزوج أو يزيد في دينه. والبيت الكبير يدل على السعة في الرزق." }
         ],
         shahin: [
-            { word: "ماء", interpretation: "الماء العذب في المنام يدل على الرزق الحلال والعيش الهنيء، والماء الكدر يدل على الهموم والأحزان." },
-            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة للرجل، ويدل على الدين، فالبنيان الجديد زيادة في الدين." }
+            { word: "ماء", interpretation: "الماء العذب في المنام يدل على الرزق الحلال والعيش الهنيء، والماء الكدر يدل على الهموم والأحزان. ومن رأى ماءً جارياً في بيته فهو خير ورزق." },
+            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة للرجل، ويدل على الدين، فالبنيان الجديد زيادة في الدين. والبيت الواسع سعة في الرزق." },
+            { word: "سفر", interpretation: "السفر في المنام يدل على الانتقال من حال إلى حال، فإن كان السفر في البر فهو همّ ومشقة، وإن كان في البحر فهو رزق واسع." }
         ]
     };
     
     let currentSource = 'sirin';
     let searchHistory = JSON.parse(localStorage.getItem('dreamSearchHistory')) || [];
     
+    // محاكاة تغيير الإعلانات
+    let adContents = [
+        { icon: "fa-gem", title: "تفسير الأحلام بكل دقة", desc: "بوابة الأحلام الأكثر شمولاً" },
+        { icon: "fa-star", title: "الموسوعة الأشمل", desc: "أكثر من 5000 رمز مُفسر" },
+        { icon: "fa-award", title: "الأكثر موثوقية", desc: "نلتزم بدقة المعلومات" },
+        { icon: "fa-hands-helping", title: "ادعم الموسوعة", desc: "ساعدنا في تطوير المحتوى" },
+        { icon: "fa-book-reader", title: "مجلدات أصلية", desc: "تفسير من مصادر موثوقة" },
+        { icon: "fa-ad", title: "مساحة إعلانية", desc: "للإعلان: advertising@dreams.com" }
+    ];
+    
     // تهيئة الصفحة عند التحميل
     window.onload = function() {
         loadData();
-        renderPopularSymbols();
         updateHistoryDisplay();
+        rotateAds(); // بدء دوران الإعلانات
         
         // إضافة حدث للإدخال التلقائي
         document.getElementById('searchInput').addEventListener('input', function() {
@@ -595,21 +722,23 @@
         console.log("تم تحميل بيانات التفسير");
     }
     
-    // عرض الرموز الشائعة
-    function renderPopularSymbols() {
-        const container = document.getElementById('popularSymbols');
-        container.innerHTML = '';
+    // تغيير الإعلانات تلقائياً
+    function rotateAds() {
+        let adIndex = 0;
+        const adElements = document.querySelectorAll('.ad-content');
         
-        popularSymbols.forEach(symbol => {
-            const tag = document.createElement('div');
-            tag.className = 'symbol-tag';
-            tag.textContent = symbol;
-            tag.onclick = () => {
-                document.getElementById('searchInput').value = symbol;
-                search();
-            };
-            container.appendChild(tag);
-        });
+        // تغيير الإعلانات كل 10 ثوان
+        setInterval(() => {
+            adElements.forEach(ad => {
+                const content = adContents[adIndex % adContents.length];
+                ad.innerHTML = `
+                    <i class="fas ${content.icon}"></i>
+                    <p>${content.title}</p>
+                    <small>${content.desc}</small>
+                `;
+                adIndex++;
+            });
+        }, 10000); // 10 ثوان
     }
     
     // تغيير مصدر التفسير
@@ -662,7 +791,7 @@
         loadingIndicator.style.display = 'block';
         resultDiv.innerHTML = '';
         
-        // محاكاة التأخير للبحث (في النسخة النهائية لن يكون هناك تأخير)
+        // محاكاة التأخير للبحث
         setTimeout(() => {
             performSearch(query, resultDiv);
             loadingIndicator.style.display = 'none';
@@ -704,9 +833,9 @@
                         <br>يمكنك تجربة البحث في مجلد آخر، أو البحث برمز آخر.
                     </p>
                     <div style="margin-top: 20px;">
-                        <button class="symbol-tag" onclick="changeSource('sirin')">ابن سيرين</button>
-                        <button class="symbol-tag" onclick="changeSource('nabulsi')">النابلسي</button>
-                        <button class="symbol-tag" onclick="changeSource('shahin')">ابن شاهين</button>
+                        <button class="history-item" onclick="changeSource('sirin')">ابن سيرين</button>
+                        <button class="history-item" onclick="changeSource('nabulsi')">النابلسي</button>
+                        <button class="history-item" onclick="changeSource('shahin')">ابن شاهين</button>
                     </div>
                 </div>
             `;
@@ -789,5 +918,3 @@
 </script>
 </body>
 </html>
-
-

@@ -4,45 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تفسير الأحلام - بيت الرؤى</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', 'Noto Naskh Arabic', sans-serif;
-        }
-        
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #8e44ad;
-            --accent-color: #16a085;
-            --light-color: #f9f9f9;
-            --text-color: #333;
-            --border-color: #eaeaea;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
             background-color: #f5f7fa;
-            color: var(--text-color);
+            color: #333;
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a2530 100%);
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         
         .container {
@@ -50,6 +27,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .header-content {
@@ -66,52 +51,15 @@
         
         .logo i {
             font-size: 2rem;
-            color: var(--accent-color);
+            color: #16a085;
         }
         
         .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 1.5rem;
         }
         
         .logo span {
-            color: var(--accent-color);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: color 0.3s;
-            padding: 5px 0;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--accent-color);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            right: 0;
-            background-color: var(--accent-color);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
+            color: #16a085;
         }
         
         /* Main Content */
@@ -122,108 +70,67 @@
         
         .hero {
             text-align: center;
-            padding: 3rem 0;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+            padding: 2rem;
+            background: white;
             border-radius: 10px;
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .hero h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            color: #2c3e50;
             margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 2rem;
         }
         
         .dream-form-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2.5rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2.5rem;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--border-color);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: 0;
-            width: 80px;
-            height: 2px;
-            background-color: var(--accent-color);
+            margin-bottom: 2rem;
         }
         
         .form-group {
             margin-bottom: 1.5rem;
         }
         
-        .form-group label {
+        label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--primary-color);
-            font-size: 1.1rem;
+            color: #2c3e50;
         }
         
         textarea {
             width: 100%;
-            padding: 15px;
-            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
             resize: vertical;
             min-height: 150px;
-            transition: border 0.3s;
-            font-family: 'Noto Naskh Arabic', serif;
-            line-height: 1.8;
+            font-family: inherit;
         }
         
         textarea:focus {
             outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+            border-color: #8e44ad;
         }
         
         .submit-btn {
-            background: linear-gradient(to left, var(--secondary-color), #6c3483);
+            background: linear-gradient(to left, #8e44ad, #6c3483);
             color: white;
             border: none;
-            padding: 14px 30px;
-            font-size: 1.1rem;
+            padding: 12px 24px;
+            font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: block;
             margin: 0 auto;
         }
         
         .submit-btn:hover {
             background: linear-gradient(to left, #7d3c98, #5b2c6f);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
         }
         
         .loading {
@@ -235,7 +142,7 @@
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            border-top: 4px solid var(--accent-color);
+            border-top: 4px solid #16a085;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
@@ -248,179 +155,47 @@
         }
         
         .result-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2.5rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             margin-top: 2rem;
             display: none;
         }
         
         .interpretation-result {
-            font-size: 1.1rem;
             line-height: 1.8;
-            color: #444;
-            font-family: 'Noto Naskh Arabic', serif;
-            text-align: justify;
         }
         
-        .interpretation-result h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .sources {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            border-right: 4px solid var(--accent-color);
-        }
-        
-        .sources h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-        }
-        
-        .sources ul {
-            list-style-position: inside;
-            color: #666;
-        }
-        
-        .sources li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Ads Sections */
-        .ad-section {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .ad-box {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            width: 300px;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 0.9rem;
-            border: 1px dashed #ddd;
-            transition: all 0.3s;
-        }
-        
-        .ad-box:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        /* Footer */
         footer {
-            background-color: var(--primary-color);
+            background-color: #2c3e50;
             color: white;
-            padding: 2.5rem 0 1.5rem;
+            padding: 2rem 0;
             margin-top: 3rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-            color: var(--accent-color);
-        }
-        
-        .footer-section p, .footer-section li {
-            color: #ccc;
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--accent-color);
-        }
-        
-        .copyright {
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
             
-            nav ul {
-                gap: 15px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
             .dream-form-container, .result-container {
                 padding: 1.5rem;
-            }
-            
-            .ad-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h2 {
-                font-size: 1.7rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            textarea {
-                min-height: 120px;
             }
         }
     </style>
@@ -434,14 +209,6 @@
                     <i class="fas fa-moon"></i>
                     <h1>بيت <span>الرؤى</span></h1>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i> كتب التفسير</a></li>
-                        <li><a href="#"><i class="fas fa-history"></i> تفسيرات سابقة</a></li>
-                        <li><a href="#"><i class="fas fa-info-circle"></i> عن الموقع</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
@@ -451,271 +218,214 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero">
-                <h2>تفسير الأحلام بالاعتماد على مراجع إسلامية موثوقة</h2>
-                <p>استعن بخبرة علماء التفسير مثل ابن سيرين والنابلسي وغيرهم لفهم رموز أحلامك وتأويلها وفقاً للمراجع العربية الأصيلة</p>
+                <h2>تفسير الأحلام باستخدام نموذج Qwen</h2>
+                <p>أدخل حلمك للحصول على تفسير مفصل باستخدام الذكاء الاصطناعي</p>
             </section>
             
-            <!-- Ad Section 1 -->
-            <div class="ad-section">
-                <div class="ad-box">
-                    <!-- مساحة إعلانية 1 -->
-                    <div class="ad-content">
-                        <p>مساحة إعلانية</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px;">للاعلان هنا تواصل معنا</p>
-                    </div>
-                </div>
-                <div class="ad-box">
-                    <!-- مساحة إعلانية 2 -->
-                    <div class="ad-content">
-                        <p>مساحة إعلانية</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px;">للاعلان هنا تواصل معنا</p>
-                    </div>
-                </div>
+            <!-- Alert -->
+            <div class="alert alert-error" id="errorAlert">
+                يجب عليك إضافة مفتاح API الخاص بك في الكود حتى يعمل التطبيق
             </div>
             
             <!-- Dream Interpretation Form -->
             <section class="dream-form-container">
-                <h2 class="section-title">فسر حلمك الآن</h2>
+                <h2 style="margin-bottom: 1.5rem; color: #2c3e50;">فسر حلمك الآن</h2>
                 <form id="dreamForm">
                     <div class="form-group">
-                        <label for="dreamDescription"><i class="fas fa-dream-catcher"></i> صف حلمك بتفصيل</label>
-                        <textarea id="dreamDescription" placeholder="اكتب وصفاً مفصلاً لحلمك، مع ذكر التفاصيل المهمة مثل الأشخاص، الأماكن، المشاعر، والألوان..." required></textarea>
+                        <label for="dreamDescription">صف حلمك:</label>
+                        <textarea id="dreamDescription" placeholder="اكتب حلمك هنا..." required></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="dreamContext"><i class="fas fa-info-circle"></i> السياق (اختياري)</label>
-                        <textarea id="dreamContext" placeholder="هل هناك ظروف معينة في حياتك حالياً قد تكون مرتبطة بهذا الحلم؟"></textarea>
+                        <label for="apiKey">مفتاح API الخاص بك:</label>
+                        <textarea id="apiKey" placeholder="أدخل مفتاح API الخاص بك هنا..." rows="3"></textarea>
+                        <small style="color: #666; display: block; margin-top: 5px;">
+                            للحصول على مفتاح API: 1. سجل في <a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> 
+                            2. انتقل إلى صفحة API Keys 3. أنشئ مفتاح جديد
+                        </small>
                     </div>
                     
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-search"></i> احصل على التفسير
+                        تفسير الحلم
                     </button>
                 </form>
             </section>
             
-            <!-- Loading Spinner -->
+            <!-- Loading -->
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <p>جاري تفسير حلمك بالاعتماد على مراجع ابن سيرين وغيرها من الكتب الموثوقة...</p>
+                <p>جاري تفسير حلمك...</p>
             </div>
             
-            <!-- Result Section -->
+            <!-- Result -->
             <section class="result-container" id="resultContainer">
-                <h2 class="section-title">تفسير حلمك</h2>
+                <h2 style="margin-bottom: 1.5rem; color: #2c3e50;">نتيجة التفسير</h2>
                 <div class="interpretation-result" id="interpretationResult">
-                    <!-- سيتم عرض التفسير هنا -->
-                </div>
-                
-                <div class="sources">
-                    <h4><i class="fas fa-books"></i> المراجع المعتمدة في التفسير</h4>
-                    <ul>
-                        <li>كتاب تفسير الأحلام الكبير لابن سيرين</li>
-                        <li>كتاب تعطير الأنام في تفسير الأحلام للنابلسي</li>
-                        <li>مفاتيح الغيب في تفسير الأحلام</li>
-                        <li>مراجع إسلامية أخرى معتمدة</li>
-                    </ul>
+                    <!-- سيتم عرض النتيجة هنا -->
                 </div>
             </section>
-            
-            <!-- Ad Section 2 -->
-            <div class="ad-section">
-                <div class="ad-box">
-                    <!-- مساحة إعلانية 3 -->
-                    <div class="ad-content">
-                        <p>مساحة إعلانية</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px;">للاعلان هنا تواصل معنا</p>
-                    </div>
-                </div>
-                <div class="ad-box">
-                    <!-- مساحة إعلانية 4 -->
-                    <div class="ad-content">
-                        <p>مساحة إعلانية</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px;">للاعلان هنا تواصل معنا</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
     
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>بيت الرؤى</h3>
-                    <p>منصة عربية لتفسير الأحلام تعتمد على مراجع إسلامية موثوقة وكتب أئمة التفسير مثل ابن سيرين والنابلسي وغيرهم.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-arrow-left"></i> الرئيسية</a></li>
-                        <li><a href="#"><i class="fas fa-arrow-left"></i> أشهر الرموز في الأحلام</a></li>
-                        <li><a href="#"><i class="fas fa-arrow-left"></i> كتب التفسير</a></li>
-                        <li><a href="#"><i class="fas fa-arrow-left"></i> اتصل بنا</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>تواصل معنا</h3>
-                    <p><i class="fas fa-envelope"></i> info@bait-alroya.com</p>
-                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
-                    <div style="margin-top: 15px;">
-                        <a href="#" style="margin-left: 10px;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="margin-left: 10px;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="margin-left: 10px;"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; بيت الرؤى 2023 | هذا الموقع يستخدم نموذج Qwen لتفسير الأحلام بالاعتماد على المراجع الإسلامية</p>
-            </div>
+            <p>تفسير الأحلام باستخدام نموذج Qwen - للاستخدام التعليمي فقط</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;">
+                ملاحظة: هذا التطبيق يحتاج إلى مفتاح API صالح من DeepSeek ليعمل
+            </p>
         </div>
     </footer>
 
     <script>
-        // API configuration
-        const API_KEY = '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';
-        const API_URL = 'https://api.deepseek.com/v1/chat/completions';
-        
-        // DOM Elements
         const dreamForm = document.getElementById('dreamForm');
         const dreamDescription = document.getElementById('dreamDescription');
-        const dreamContext = document.getElementById('dreamContext');
+        const apiKeyInput = document.getElementById('apiKey');
         const loadingElement = document.getElementById('loading');
         const resultContainer = document.getElementById('resultContainer');
         const interpretationResult = document.getElementById('interpretationResult');
-        
-        // Handle form submission
+        const errorAlert = document.getElementById('errorAlert');
+
+        // API configuration - المستخدم يدخل مفتاحه
+        const API_URL = 'https://api.deepseek.com/v1/chat/completions';
+
         dreamForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Validate input
-            if (!dreamDescription.value.trim()) {
-                alert('يرجى وصف الحلم للحصول على تفسير');
-                dreamDescription.focus();
+            const dreamText = dreamDescription.value.trim();
+            const apiKey = apiKeyInput.value.trim();
+            
+            if (!dreamText) {
+                showError('يرجى كتابة حلمك');
                 return;
             }
             
-            // Show loading spinner
+            if (!apiKey) {
+                showError('يرجى إدخال مفتاح API الخاص بك');
+                return;
+            }
+            
+            // إظهار التحميل وإخفاء النتائج القديمة
             loadingElement.style.display = 'block';
             resultContainer.style.display = 'none';
+            errorAlert.style.display = 'none';
             
             try {
-                // Prepare the prompt for Qwen
-                const prompt = `
-                أنت خبير في تفسير الأحلام حسب الكتب والمراجع الإسلامية العربية مثل كتاب تفسير الأحلام لابن سيرين، وتعطير الأنام للنابلسي، وغيرها من المراجع الموثوقة.
-                
-                قم بتفسير الحلم التالي وفقاً للمراجع الإسلامية العربية:
-                
-                الحلم: ${dreamDescription.value}
-                
-                ${dreamContext.value ? `السياق: ${dreamContext.value}` : ''}
-                
-                يرجى تقديم تفسير شامل للحلم باللغة العربية مع:
-                1. تفسير شامل للحلم حسب المراجع الإسلامية
-                2. تفسير الرموز الرئيسية في الحلم حسب كتب ابن سيرين والنابلسي
-                3. التأويل المحتمل للحلم في سياق الحياة الواقعية
-                4. الإشارة إلى المراجع التي استندت إليها في التفسير
-                
-                قدم التفسير بلغة عربية فصحى وأنيقة، مع مراعاة الدقة في النقل من المراجع.
-                `;
-                
-                // Call Qwen API
+                // إعداد رسالة النظام لضمان تفسير إسلامي
+                const systemMessage = {
+                    role: "system",
+                    content: `أنت مفسر أحلام إسلامي متخصص. استخدم المراجع الإسلامية مثل:
+                    1. تفسير الأحلام لابن سيرين
+                    2. تعطير الأنام للنابلسي
+                    3. المراجع الإسلامية الموثوقة
+                    
+                    قدم تفسيراً شاملاً للحلم يشمل:
+                    - تفسير عام للحلم
+                    - تفسير الرموز الرئيسية حسب المراجع الإسلامية
+                    - التأويل المحتمل في سياق الحياة
+                    - النصيحة الشرعية المناسبة
+                    
+                    تجنب الإفراط في التفاؤل أو التشاؤم، وكن معتدلاً في تفسيرك.
+                    استخدم لغة عربية فصحى واضحة.`
+                };
+
+                // رسالة المستخدم
+                const userMessage = {
+                    role: "user",
+                    content: `أريد تفسير هذا الحلم: "${dreamText}"`
+                };
+
+                // طلب API
                 const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${API_KEY}`
+                        'Authorization': `Bearer ${apiKey}`
                     },
                     body: JSON.stringify({
                         model: 'qwen-max',
-                        messages: [
-                            {
-                                role: 'system',
-                                content: 'أنت مفسر أحلام متخصص في المراجع الإسلامية العربية مثل ابن سيرين والنابلسي. قدم تفسيرات دقيقة بناءً على هذه المراجع.'
-                            },
-                            {
-                                role: 'user',
-                                content: prompt
-                            }
-                        ],
-                        max_tokens: 1500,
+                        messages: [systemMessage, userMessage],
+                        max_tokens: 1000,
                         temperature: 0.7
                     })
                 });
-                
+
                 if (!response.ok) {
-                    throw new Error(`خطأ في API: ${response.status}`);
+                    const errorData = await response.json();
+                    throw new Error(errorData.error?.message || `خطأ في الخادم: ${response.status}`);
                 }
-                
+
                 const data = await response.json();
                 
-                // Extract the interpretation from the response
+                if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+                    throw new Error('استجابة غير صحيحة من API');
+                }
+
                 const interpretation = data.choices[0].message.content;
                 
-                // Display the result
+                // عرض النتيجة
                 interpretationResult.innerHTML = `
-                    <h3>تفسير حلمك</h3>
-                    <p>${interpretation.replace(/\n/g, '</p><p>')}</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <strong>الحلم الذي أدخلته:</strong>
+                        <p>${dreamText}</p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        ${interpretation.replace(/\n/g, '</p><p>')}
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1rem; background: #e8f5e8; border-radius: 8px; border-right: 4px solid #16a085;">
+                        <strong>ملاحظة:</strong>
+                        <p>هذا التفسير باستخدام الذكاء الاصطناعي ويعتمد على المراجع الإسلامية، والأحلام منها ما هو حق ومنها ما هو أضغاث أحلام.</p>
+                    </div>
                 `;
                 
-                // Hide loading spinner and show result
+                // إخفاء التحميل وإظهار النتيجة
                 loadingElement.style.display = 'none';
                 resultContainer.style.display = 'block';
                 
-                // Scroll to result
+                // التمرير إلى النتيجة
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
                 
             } catch (error) {
                 console.error('Error:', error);
-                
-                // Hide loading spinner
                 loadingElement.style.display = 'none';
-                
-                // Show error message
-                interpretationResult.innerHTML = `
-                    <h3>عذراً، حدث خطأ</h3>
-                    <p>حدث خطأ أثناء تفسير حلمك. يرجى المحاولة مرة أخرى.</p>
-                    <p>${error.message}</p>
-                `;
-                
-                resultContainer.style.display = 'block';
-                resultContainer.scrollIntoView({ behavior: 'smooth' });
+                showError(`خطأ: ${error.message}`);
             }
         });
-        
-        // Sample interpretations for demo purposes
-        const sampleDreams = [
-            "رأيت في المنام أنني أسير في حديقة جميلة مليئة بالأزهار والورود، وكانت الشمس تشرق بإشراقة جميلة.",
-            "حلمت بأنني أطير في السماء بدون أجنحة، وكنت أشعر بالحرية والسعادة الغامرة.",
-            "رأيت في المنام أنني أتناول طعاماً لذيذاً مع عائلتي في منزلنا القديم الذي كنا نسكن فيه."
-        ];
-        
-        // Function to load a sample dream (for demo)
-        function loadSampleDream(index) {
-            dreamDescription.value = sampleDreams[index];
-            dreamContext.value = "لا يوجد سياق خاص، مجرد حلم عادي.";
+
+        function showError(message) {
+            errorAlert.textContent = message;
+            errorAlert.style.display = 'block';
+            setTimeout(() => {
+                errorAlert.style.display = 'none';
+            }, 5000);
         }
-        
-        // Add sample buttons for demo (optional)
+
+        // أمثلة لاختبار الوظيفة
+        const examples = [
+            "حلمت أنني أسير في حديقة مليئة بالأزهار والورود الجميلة",
+            "رأيت في المنام أنني أطير في السماء بحرية تامة",
+            "حلمت بأنني أتحدث مع شخص أعرفه وقد أعطاني مالاً"
+        ];
+
+        // إضافة زر للمثال التجريبي
         window.addEventListener('DOMContentLoaded', () => {
-            // Add sample buttons if needed
-            const formContainer = document.querySelector('.dream-form-container');
-            const sampleDiv = document.createElement('div');
-            sampleDiv.style.marginTop = '20px';
-            sampleDiv.style.textAlign = 'center';
-            sampleDiv.innerHTML = `
-                <p style="color: #666; margin-bottom: 10px;">للتجربة: اختر مثالاً لعرض تفسير تجريبي</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="loadSampleDream(0)" style="padding: 8px 15px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 1</button>
-                    <button onclick="loadSampleDream(1)" style="padding: 8px 15px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 2</button>
-                    <button onclick="loadSampleDream(2)" style="padding: 8px 15px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 3</button>
-                </div>
+            const form = document.querySelector('.dream-form-container');
+            const exampleDiv = document.createElement('div');
+            exampleDiv.style.marginTop = '1rem';
+            exampleDiv.style.textAlign = 'center';
+            exampleDiv.innerHTML = `
+                <p style="color: #666; margin-bottom: 0.5rem;">جرب مثالاً:</p>
+                <button onclick="loadExample(0)" style="margin: 0 5px; padding: 8px 12px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 1</button>
+                <button onclick="loadExample(1)" style="margin: 0 5px; padding: 8px 12px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 2</button>
+                <button onclick="loadExample(2)" style="margin: 0 5px; padding: 8px 12px; background: #f1f1f1; border: 1px solid #ddd; border-radius: 5px; cursor: pointer;">مثال 3</button>
             `;
-            formContainer.appendChild(sampleDiv);
+            form.appendChild(exampleDiv);
         });
+
+        function loadExample(index) {
+            dreamDescription.value = examples[index];
+            showError('أدخل مفتاح API الخاص بك ثم اضغط على "تفسير الحلم"');
+        }
     </script>
 </body>
 </html>

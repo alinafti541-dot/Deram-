@@ -3,841 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الموسوعة الكبرى لتفسير الأحلام</title>
+    <title>تفسير الأحلام - ابن سيرين</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --dark-royal: #050c1a;
-            --gold-leaf: #c5a059;
-            --accent-gold: #d4af37;
-            --bg-soft: #f8f9fa;
-            --light-bg: #fffaf0;
-            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
         body {
-            background-color: var(--bg-soft);
+            background-color: #f4f7f6;
             font-family: 'Tajawal', sans-serif;
-            color: var(--dark-royal);
-            margin: 0;
-            line-height: 1.8;
+            color: #2d3436;
         }
-        
-        .royal-header {
-            background: linear-gradient(135deg, #050c1a 0%, #0f172a 100%);
+        .header-box {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--gold-leaf);
-            position: relative;
-            overflow: hidden;
+            border-bottom: 5px solid #d4af37;
         }
-        
-        .royal-header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-        
-        .royal-header h1 {
-            font-family: 'Amiri', serif;
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-            position: relative;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .royal-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .header-icons {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: space-between;
-            z-index: 10;
-        }
-        
-        .header-icons i {
-            color: var(--gold-leaf);
-            font-size: 1.5rem;
-        }
-        
-        /* مساحات الإعلانات */
-        .ad-space {
-            background: linear-gradient(135deg, rgba(255, 250, 240, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            margin: 20px auto;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-            max-width: 100%;
-        }
-        
-        .ad-space::before {
-            content: "إعلان";
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: var(--gold-leaf);
-            color: white;
-            font-size: 0.7rem;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        
-        .ad-space:hover {
-            border-color: rgba(197, 160, 89, 0.4);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .ad-content {
-            min-height: 90px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--dark-royal);
-            font-weight: bold;
-            padding: 10px;
-        }
-        
-        .ad-content i {
-            font-size: 2rem;
-            color: var(--gold-leaf);
-            margin-bottom: 10px;
-        }
-        
-        .ad-content p {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-        
-        .ad-content small {
-            font-weight: normal;
-            color: #666;
-            margin-top: 5px;
-            font-size: 0.85rem;
-        }
-        
-        .search-section {
-            max-width: 700px;
-            margin: -30px auto 30px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 5;
-        }
+        .header-box h1 { font-family: 'Amiri', serif; font-size: 3rem; }
         
         .search-container {
+            max-width: 600px;
+            margin: -30px auto 30px;
             position: relative;
         }
-        
-        .search-bar {
-            border-radius: 50px !important;
-            padding: 20px 30px !important;
-            border: 2px solid var(--gold-leaf) !important;
-            font-size: 1.2rem !important;
-            box-shadow: var(--shadow-medium) !important;
-            text-align: center;
-            background-color: white;
-            transition: all 0.3s ease;
+        .search-input {
+            border-radius: 30px;
+            padding: 15px 25px;
+            border: 2px solid #d4af37;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
-        .search-bar:focus {
-            border-color: var(--accent-gold) !important;
-            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
-        }
-        
-        .search-btn {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--dark-royal);
-            border: none;
-            color: var(--accent-gold);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .search-btn:hover {
-            background-color: var(--gold-leaf);
-            color: var(--dark-royal);
-        }
-        
-        .main-content {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 30px;
-            border: 1px solid rgba(197, 160, 89, 0.1);
-        }
-        
-        .nav-tabs-royal {
-            border: none !important;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .nav-link {
-            border: 2px solid #f0f0f0 !important;
-            border-radius: 50px !important;
-            color: var(--dark-royal) !important;
-            font-weight: 700;
-            padding: 10px 25px !important;
-            background: #fff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .nav-link:hover {
-            border-color: var(--gold-leaf) !important;
-        }
-        
-        .nav-link.active {
-            background: linear-gradient(135deg, var(--dark-royal) 0%, #1a243a 100%) !important;
-            color: var(--accent-gold) !important;
-            border-color: var(--dark-royal) !important;
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .interpretation-display {
-            font-family: 'Amiri', serif;
-            font-size: 1.7rem;
-            line-height: 1.9;
-            color: #2d3436;
-            padding: 30px;
-            background: var(--light-bg);
-            border-right: 6px solid var(--gold-leaf);
-            border-radius: 10px;
-            min-height: 250px;
-            position: relative;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
-        }
-        
-        .mufasir-label {
-            font-size: 1.1rem;
-            color: var(--gold-leaf);
-            font-weight: 900;
-            margin-bottom: 15px;
-            display: block;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .mufasir-label i {
-            font-size: 1.3rem;
-        }
-        
-        .search-history {
+        .main-card {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-            display: none;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            min-height: 400px;
         }
-        
-        .search-history h4 {
-            color: var(--dark-royal);
-            border-bottom: 2px solid var(--gold-leaf);
+        .result-title {
+            color: #b21f1f;
+            border-bottom: 2px solid #f1f1f1;
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-family: 'Amiri', serif;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .history-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .history-item {
-            background: var(--bg-soft);
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--dark-royal);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .history-item:hover {
-            background: var(--gold-leaf);
-            color: white;
-            border-color: var(--gold-leaf);
-        }
-        
-        .clear-history {
-            background: none;
-            border: none;
-            color: #888;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-        
-        .clear-history:hover {
-            color: #e74c3c;
-        }
-        
-        footer {
-            background: #050c1a;
-            color: #aaa;
-            padding: 25px;
-            text-align: center;
-            border-top: 3px solid var(--gold-leaf);
-            font-size: 0.9rem;
-            margin-top: 30px;
-        }
-        
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .loading-indicator {
-            display: none;
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .loading-indicator i {
-            color: var(--gold-leaf);
             font-size: 2rem;
-            margin-bottom: 15px;
         }
-        
-        .result-header {
-            color: var(--dark-royal);
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--gold-leaf);
-            padding-bottom: 8px;
-            display: inline-block;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 1.5rem;
+        .result-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            text-align: justify;
         }
-        
-        .no-result {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-        }
-        
-        .no-result i {
-            font-size: 3rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-        
-        .initial-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #777;
-        }
-        
-        .initial-state i {
-            font-size: 4rem;
-            color: var(--gold-leaf);
-            margin-bottom: 20px;
-            opacity: 0.5;
-        }
-        
-        .info-box {
-            background: rgba(197, 160, 89, 0.1);
-            border-right: 4px solid var(--gold-leaf);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 30px;
-            font-family: 'Tajawal', sans-serif;
-        }
-        
-        .info-box h5 {
-            color: var(--dark-royal);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .ad-top {
-            margin: 10px auto 30px;
-            max-width: 100%;
-        }
-        
-        .ad-middle {
-            margin: 30px auto;
-            max-width: 100%;
-        }
-        
-        .ad-bottom {
-            margin: 30px auto 20px;
-            max-width: 100%;
-        }
-        
-        @media (max-width: 768px) {
-            .royal-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .interpretation-display {
-                font-size: 1.4rem;
-                line-height: 1.7;
-                padding: 20px;
-            }
-            
-            .nav-link {
-                padding: 8px 15px !important;
-                font-size: 0.9rem;
-            }
-            
-            .search-bar {
-                padding: 15px 20px !important;
-                font-size: 1.1rem !important;
-            }
-            
-            .ad-space {
-                padding: 12px;
-            }
-        }
+        .loading { display: none; color: #d4af37; text-align: center; }
     </style>
 </head>
 <body>
 
-<!-- إعلان 1: في أعلى الصفحة -->
-<div class="container">
-    <div class="ad-space ad-top">
-        <div class="ad-content">
-            <i class="fas fa-gem"></i>
-            <p>الموسوعة الكبرى لتفسير الأحلام</p>
-            <small>بوابة الأحلام الأكثر شمولاً في العالم العربي</small>
-        </div>
-    </div>
+<div class="header-box">
+    <h1>تفسير الأحلام لابن سيرين</h1>
+    <p>الموسوعة الشاملة للحروف والرموز</p>
 </div>
 
-<header class="royal-header">
-    <div class="header-icons">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-star-and-crescent"></i>
-    </div>
-    <h1><i class="fas fa-book-open"></i> الموسوعة الكبرى لتفسير الأحلام</h1>
-    <p>بوابتك الموثوقة لفك رموز الرؤى والمنامات عبر مجلدات أئمة التفسير</p>
-</header>
-
-<div class="search-section">
+<div class="container">
     <div class="search-container">
-        <input type="text" id="searchInput" class="form-control search-bar" placeholder="اكتب رمز الرؤيا هنا... مثل: مطر، أسد، بيت">
-        <button class="search-btn" onclick="search()">
-            <i class="fas fa-search"></i>
-        </button>
+        <input type="text" id="searchInput" class="form-control search-input" placeholder="ابحث عن رمز (مثلاً: أسد، أب، ماء)..." onkeyup="if(event.key === 'Enter') search()">
     </div>
-</div>
 
-<div class="container">
-    <div class="main-content">
-        <ul class="nav nav-pills nav-tabs-royal">
-            <li class="nav-item">
-                <button id="btn-sirin" class="nav-link active" onclick="changeSource('sirin')">
-                    <i class="fas fa-user-graduate"></i> ابن سيرين
-                </button>
-            </li>
-            <li class="nav-item">
-                <button id="btn-nabulsi" class="nav-link" onclick="changeSource('nabulsi')">
-                    <i class="fas fa-user-tie"></i> النابلسي
-                </button>
-            </li>
-            <li class="nav-item">
-                <button id="btn-shahin" class="nav-link" onclick="changeSource('shahin')">
-                    <i class="fas fa-user-circle"></i> ابن شاهين
-                </button>
-            </li>
-        </ul>
-
-        <div id="displayArea">
-            <span id="mufasirTitle" class="mufasir-label">
-                <i class="fas fa-book"></i> مجلد الإمام ابن سيرين
-            </span>
-            <div id="resultText" class="interpretation-display">
-                <div class="initial-state">
-                    <i class="fas fa-dream"></i>
-                    <h4 style="color: var(--dark-royal); margin-bottom: 15px;">مرحباً بك في موسوعة تفسير الأحلام</h4>
-                    <p style="font-family: 'Tajawal', sans-serif; font-size: 1.1rem;">
-                        اكتب رمزاً من رؤياك في شريط البحث أعلاه للحصول على التفسير من مجلدات أئمة التفسير.
-                    </p>
-                </div>
+    <div class="main-card mb-5">
+        <div id="loading" class="loading">جاري البحث في المجلد...</div>
+        <div id="resultArea">
+            <div class="text-center pt-5 opacity-50">
+                <p>ابدأ بكتابة الرمز الذي رأيته في منامك</p>
             </div>
-        </div>
-        
-        <div class="loading-indicator" id="loadingIndicator">
-            <i class="fas fa-spinner fa-spin"></i>
-            <p>جاري البحث في المجلدات...</p>
-        </div>
-        
-        <!-- إعلان 2: في منتصف الصفحة -->
-        <div class="ad-space ad-middle">
-            <div class="ad-content">
-                <i class="fas fa-book-reader"></i>
-                <p>مجلدات تفسير الأحلام الأصلية</p>
-                <small>نقدم التفسير من مصادر موثوقة</small>
-            </div>
-        </div>
-        
-        <div class="info-box">
-            <h5><i class="fas fa-lightbulb"></i> نصائح للتفسير الصحيح</h5>
-            <p style="font-size: 0.95rem; margin-bottom: 0;">
-                • ركز على الرمز الرئيسي في الحلم وليس التفاصيل الصغيرة.<br>
-                • ضع في اعتبارك سياق الرؤيا وحالتك النفسية وقت الرؤيا.<br>
-                • الأحلام قد تكون انعكاساً للتفكير اليومي أو هموم النفس.<br>
-                • تفسير الأحلام فن وعلم، وتفسيرات العلماء هي أقرب للصواب.
-            </p>
-        </div>
-    </div>
-    
-    <div class="search-history" id="searchHistory">
-        <h4>
-            <span><i class="fas fa-history"></i> تاريخ البحث</span>
-            <button class="clear-history" onclick="clearHistory()">مسح التاريخ</button>
-        </h4>
-        <div class="history-items" id="historyItems">
-            <!-- سيتم تعبئتها بواسطة الجافاسكربت -->
-        </div>
-    </div>
-    
-    <!-- إعلان 3: في أسفل الصفحة -->
-    <div class="ad-space ad-bottom">
-        <div class="ad-content">
-            <i class="fas fa-award"></i>
-            <p>الموسوعة الأكثر موثوقية لتفسير الأحلام</p>
-            <small>نلتزم بدقة المعلومات وأصالتها</small>
         </div>
     </div>
 </div>
-
-<footer>
-    <div class="footer-content">
-        <p><i class="fas fa-copyright"></i> 2026 الموسوعة الكبرى لتفسير الأحلام - جميع الحقوق محفوظة</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">
-            هذه الموسوعة تجميع لتفسيرات العلماء القدامى، ولا تغني عن الاستشارة الشرعية المتخصصة.
-        </p>
-    </div>
-</footer>
 
 <script>
-    // بيانات تجريبية للأحلام (ستستبدل بالبيانات الفعلية من JSON)
-    let data = {
-        sirin: [
-            { word: "ماء", interpretation: "رؤية الماء في المنام تدل على الحياة والعلم والمال، فالماء العذب خير وبركة، والماء الكدر همّ ومرض. ومن رأى أنه يشرب ماء عذباً فهو خير وبركة، وإن كان الماء كدراً فهو همّ ومرض." },
-            { word: "نار", interpretation: "النار في المنام تدل على القوة والسلطان إن كانت مسيطرة عليها، وتدل على الفتنة والعداوة إن كانت مضرة. ومن رأى ناراً تأججت في بيته فإنها تدل على العداوة من أهله." },
-            { word: "أسد", interpretation: "الأسد في المنام يدل على السلطان الجائر أو الرجل الشجاع، وقد تدل على العزة والقوة للناظر. ومن رأى أنه يركب أسداً فإنه يغلب عدواً قوياً." },
-            { word: "ثعبان", interpretation: "الثعبان في المنام عدوّ مخاتل، فإن قتلته انقطعت عداوته، وإن هربت منـه فستقع في عداوة. ومن رأى ثعباناً في بيته فهو عدو من أهل بيته." },
-            { word: "ذهب", interpretation: "الذهب في المنام يدل على المال الحرام إن كان مصنوعاً، ويدل على العلم النافع إن كان ذهباً خاماً. ومن رأى أنه يلبس ذهباً فإنه يصيبه همّ وغم." },
-            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة أو الدين، فمن رأى بيتاً جديداً فإنه يتزوج أو يزيد في دينه. والبيت الكبير يدل على السعة في الرزق." }
-        ],
-        nabulsi: [
-            { word: "ماء", interpretation: "الماء في المنام يدل على الإسلام والعلم، فمن شرب ماء عذباً نال علماً نافعاً، والماء الكثير بحر علم أو دنيا واسعة. ومن رأى ماء جارياً فإنه يدل على الرزق المتجدد." },
-            { word: "نار", interpretation: "رؤية النار إن كانت هادئة فهي محبة وقرب من الله، وإن كانت متأججة فهي فتنة وهمّ وعداوة. ومن رأى أنه يحمل ناراً فإنه يحمل همّاً." },
-            { word: "ذهب", interpretation: "الذهب في المنام مال حرام إن كان مصنوعاً، والعلم النافع إن كان ذهباً خاماً. ومن رأى أنه يعطى ذهباً فإنه يعطى علماً نافعاً." },
-            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة أو الدين، فمن رأى بيتاً جديداً فإنه يتزوج أو يزيد في دينه. والبيت الكبير يدل على السعة في الرزق." },
-            { word: "سفر", interpretation: "السفر في المنام يدل على الانتقال من حال إلى حال، فإن كان السفر في البر فهو همّ ومشقة، وإن كان في البحر فهو رزق واسع." }
-        ],
-        shahin: [
-            { word: "ماء", interpretation: "الماء العذب في المنام يدل على الرزق الحلال والعيش الهنيء، والماء الكدر يدل على الهموم والأحزان. ومن رأى ماءً جارياً في بيته فهو خير ورزق." },
-            { word: "بيت", interpretation: "البيت في المنام يدل على المرأة للرجل، ويدل على الدين، فالبنيان الجديد زيادة في الدين. والبيت الواسع سعة في الرزق." },
-            { word: "سفر", interpretation: "السفر في المنام يدل على الانتقال من حال إلى حال، فإن كان السفر في البر فهو همّ ومشقة، وإن كان في البحر فهو رزق واسع." },
-            { word: "قمح", interpretation: "رؤية القمح في المنام تدل على الرزق الحلال والعلم النافع، فمن رأى أنه يأكل قمحاً فإنه يأكل مالاً حلالاً." }
-        ]
-    };
-    
-    let currentSource = 'sirin';
-    let searchHistory = JSON.parse(localStorage.getItem('dreamSearchHistory')) || [];
-    
-    // محاكاة تغيير الإعلانات
-    let adContents = [
-        { icon: "fa-gem", title: "الموسوعة الكبرى لتفسير الأحلام", desc: "بوابة الأحلام الأكثر شمولاً في العالم العربي" },
-        { icon: "fa-star", title: "الموسوعة الأشمل", desc: "أكثر من 5000 رمز مُفسر" },
-        { icon: "fa-award", title: "الأكثر موثوقية", desc: "نلتزم بدقة المعلومات وأصالتها" },
-        { icon: "fa-hands-helping", title: "ادعم الموسوعة", desc: "ساعدنا في تطوير المحتوى" },
-        { icon: "fa-book-reader", title: "مجلدات أصلية", desc: "تفسير من مصادر موثوقة" },
-        { icon: "fa-ad", title: "مساحة إعلانية", desc: "للإعلان: advertising@dreams.com" }
-    ];
-    
-    // تهيئة الصفحة عند التحميل
-    window.onload = function() {
-        loadData();
-        updateHistoryDisplay();
-        rotateAds(); // بدء دوران الإعلانات
-        
-        // إضافة حدث للإدخال التلقائي
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const query = this.value.trim();
-            if (query.length > 0) {
-                document.getElementById('searchHistory').style.display = 'block';
-            }
-        });
-        
-        // إضافة حدث للضغط على Enter
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                search();
-            }
-        });
-    };
-    
-    // تحميل البيانات (في النسخة النهائية سيتم جلبها من ملفات JSON)
+    let sirinData = [];
+
+    // جلب البيانات من ملف JSON
     async function loadData() {
-        // محاكاة لجلب البيانات
-        console.log("جاري تحميل بيانات التفسير...");
-        
-        // في التطبيق الحقيقي:
-        // const [s, n, h] = await Promise.all([
-        //     fetch('data_sirin.json').then(r => r.json()),
-        //     fetch('data_nabulsi.json').then(r => r.json()),
-        //     fetch('data_shahin.json').then(r => r.json())
-        // ]);
-        // data = { sirin: s, nabulsi: n, shahin: h };
-        
-        console.log("تم تحميل بيانات التفسير");
-    }
-    
-    // تغيير الإعلانات تلقائياً
-    function rotateAds() {
-        let adIndex = 0;
-        const adElements = document.querySelectorAll('.ad-content');
-        
-        // تغيير الإعلانات كل 12 ثانية
-        setInterval(() => {
-            adElements.forEach(ad => {
-                const content = adContents[adIndex % adContents.length];
-                ad.innerHTML = `
-                    <i class="fas ${content.icon}"></i>
-                    <p>${content.title}</p>
-                    <small>${content.desc}</small>
-                `;
-            });
-            adIndex++;
-        }, 12000); // 12 ثانية
-    }
-    
-    // تغيير مصدر التفسير
-    function changeSource(src) {
-        currentSource = src;
-        document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
-        document.getElementById('btn-' + src).classList.add('active');
-        
-        const titles = {
-            sirin: 'مجلد الإمام ابن سيرين',
-            nabulsi: 'مجلد الشيخ النابلسي',
-            shahin: 'مجلد العالم ابن شاهين'
-        };
-        
-        const icons = {
-            sirin: 'fa-book',
-            nabulsi: 'fa-book-open',
-            shahin: 'fa-book-reader'
-        };
-        
-        document.getElementById('mufasirTitle').innerHTML = `<i class="fas ${icons[src]}"></i> ${titles[src]}`;
-        
-        // إعادة البحث إذا كان هناك نص في شريط البحث
-        const query = document.getElementById('searchInput').value.trim();
-        if (query) {
-            search();
+        try {
+            const response = await fetch('data_sirin.json');
+            sirinData = await response.json();
+            console.log("تم تحميل بيانات ابن سيرين بنجاح");
+        } catch (error) {
+            console.error("خطأ في تحميل ملف data_sirin.json", error);
         }
     }
-    
-    // البحث عن التفسير
-    function search() {
-        const query = document.getElementById('searchInput').value.trim();
-        const resultDiv = document.getElementById('resultText');
-        const loadingIndicator = document.getElementById('loadingIndicator');
-        
-        if (!query) {
-            resultDiv.innerHTML = `
-                <div class="initial-state">
-                    <i class="fas fa-dream"></i>
-                    <h4 style="color: var(--dark-royal); margin-bottom: 15px;">اكتب رمز الرؤيا للبحث</h4>
-                    <p style="font-family: 'Tajawal', sans-serif; font-size: 1.1rem;">
-                        اكتب رمزاً من رؤياك في شريط البحث أعلاه للحصول على التفسير.
-                    </p>
-                </div>
-            `;
-            return;
-        }
-        
-        // إظهار مؤشر التحميل
-        loadingIndicator.style.display = 'block';
-        resultDiv.innerHTML = '';
-        
-        // محاكاة التأخير للبحث
-        setTimeout(() => {
-            performSearch(query, resultDiv);
-            loadingIndicator.style.display = 'none';
-        }, 500);
-    }
-    
-    // تنفيذ البحث الفعلي
-    function performSearch(query, resultDiv) {
-        // إضافة البحث إلى التاريخ
-        addToHistory(query);
-        
-        // البحث في البيانات
-        const cleanQuery = cleanText(query);
-        const found = data[currentSource].find(item => 
-            cleanText(item.word) === cleanQuery || 
-            item.word.includes(query) ||
-            cleanText(item.word).includes(cleanQuery)
-        );
-        
-        if (found) {
-            resultDiv.innerHTML = `
-                <div class="result-header">
-                    <i class="fas fa-search me-2"></i> تفسير رمز "${query}"
-                </div>
-                <div style="font-size: 1.6rem; line-height: 1.9;">
-                    ${found.interpretation}
-                </div>
-                <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; color: #777; font-size: 1rem; font-family: 'Tajawal', sans-serif;">
-                    <i class="fas fa-info-circle me-2"></i> هذا التفسير من مجلد ${getMufasirName(currentSource)}، وقد تختلف التفاسير حسب سياق الرؤيا.
-                </div>
-            `;
-        } else {
-            resultDiv.innerHTML = `
-                <div class="no-result">
-                    <i class="far fa-frown"></i>
-                    <h4 style="color: var(--dark-royal); margin-bottom: 15px;">لم يتم العثور على تفسير</h4>
-                    <p style="font-family: 'Tajawal', sans-serif; font-size: 1.1rem;">
-                        عذراً، لم يتم العثور على تفسير لرمز "${query}" في مجلد ${getMufasirName(currentSource)}.
-                        <br>يمكنك تجربة البحث في مجلد آخر، أو البحث برمز آخر.
-                    </p>
-                    <div style="margin-top: 20px;">
-                        <button class="history-item" onclick="changeSource('sirin')">ابن سيرين</button>
-                        <button class="history-item" onclick="changeSource('nabulsi')">النابلسي</button>
-                        <button class="history-item" onclick="changeSource('shahin')">ابن شاهين</button>
-                    </div>
-                </div>
-            `;
-        }
-        
-        // إظهار تاريخ البحث
-        document.getElementById('searchHistory').style.display = 'block';
-    }
-    
-    // تنظيف النص للبحث
+
+    // تنظيف النص للبحث الذكي
     function cleanText(t) {
         if (!t) return '';
-        return t
-            .replace(/^ال/, "")
-            .replace(/[أإآا]/g, "ا")
-            .replace(/ة/g, "ه")
-            .replace(/ى/g, "ي")
-            .replace(/ئ|ء/g, "")
-            .trim();
+        return t.replace(/^ال/, "")
+                .replace(/[أإآا]/g, "ا")
+                .replace(/ة/g, "ه")
+                .replace(/ى/g, "ي")
+                .trim();
     }
-    
-    // إضافة البحث إلى التاريخ
-    function addToHistory(query) {
-        // تجنب التكرار
-        searchHistory = searchHistory.filter(item => item !== query);
-        
-        // إضافة البحث الجديد في البداية
-        searchHistory.unshift(query);
-        
-        // الحفاظ على 10 عناصر فقط
-        if (searchHistory.length > 10) {
-            searchHistory = searchHistory.slice(0, 10);
-        }
-        
-        // حفظ في localStorage
-        localStorage.setItem('dreamSearchHistory', JSON.stringify(searchHistory));
-        
-        // تحديث العرض
-        updateHistoryDisplay();
+
+    function search() {
+        const query = document.getElementById('searchInput').value.trim();
+        const resultArea = document.getElementById('resultArea');
+        const loader = document.getElementById('loading');
+
+        if (!query) return;
+
+        loader.style.display = 'block';
+        resultArea.innerHTML = '';
+
+        // تأخير بسيط لمحاكاة البحث
+        setTimeout(() => {
+            const cleanQuery = cleanText(query);
+            const found = sirinData.find(item => 
+                cleanText(item.word) === cleanQuery || 
+                item.word.includes(query) ||
+                cleanText(item.word).includes(cleanQuery)
+            );
+
+            loader.style.display = 'none';
+
+            if (found) {
+                resultArea.innerHTML = `
+                    <h2 class="result-title">تفسير رمز: ${found.word}</h2>
+                    <div class="result-text">${found.interpretation}</div>
+                `;
+            } else {
+                resultArea.innerHTML = `
+                    <div class="text-center pt-5">
+                        <h4>عذراً، لم نجد هذا الرمز</h4>
+                        <p>تأكد من كتابة الكلمة بشكل صحيح أو جرب رمزاً آخر</p>
+                    </div>`;
+            }
+        }, 300);
     }
-    
-    // تحديث عرض التاريخ
-    function updateHistoryDisplay() {
-        const container = document.getElementById('historyItems');
-        container.innerHTML = '';
-        
-        if (searchHistory.length === 0) {
-            container.innerHTML = '<p style="color: #888; width: 100%; text-align: center;">لا توجد عمليات بحث سابقة</p>';
-            return;
-        }
-        
-        searchHistory.forEach(item => {
-            const historyItem = document.createElement('div');
-            historyItem.className = 'history-item';
-            historyItem.innerHTML = `<i class="fas fa-search"></i> ${item}`;
-            historyItem.onclick = () => {
-                document.getElementById('searchInput').value = item;
-                search();
-            };
-            container.appendChild(historyItem);
-        });
-    }
-    
-    // مسح التاريخ
-    function clearHistory() {
-        searchHistory = [];
-        localStorage.removeItem('dreamSearchHistory');
-        updateHistoryDisplay();
-    }
-    
-    // الحصول على اسم المفسر
-    function getMufasirName(source) {
-        const names = {
-            sirin: 'ابن سيرين',
-            nabulsi: 'النابلسي',
-            shahin: 'ابن شاهين'
-        };
-        return names[source] || '';
-    }
+
+    // تشغيل التحميل عند فتح الصفحة
+    window.onload = loadData;
 </script>
+
 </body>
 </html>

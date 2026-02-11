@@ -8,441 +8,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(135, 206, 250, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(147, 112, 219, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .ad-space {
-            width: 100%;
-            height: 90px;
-            background: linear-gradient(90deg, #87ceeb 0%, #4682b4 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            position: relative;
-            z-index: 10;
-            border-bottom: 3px solid rgba(255,255,255,0.3);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
-            text-align: center;
-            margin: 40px 0;
-            animation: fadeInDown 1s ease;
-        }
-
-        .header h1 {
-            color: white;
-            font-size: 2.8em;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            font-weight: 700;
-        }
-
-        .header p {
-            color: rgba(255,255,255,0.95);
-            font-size: 1.2em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .main-card {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .main-card::before {
-            content: '✦';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 3em;
-            color: rgba(135, 206, 250, 0.2);
-        }
-
-        .main-card::after {
-            content: '✦';
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 3em;
-            color: rgba(135, 206, 250, 0.2);
-        }
-
-        .input-section {
-            margin-bottom: 30px;
-        }
-
-        .input-label {
-            display: block;
-            font-size: 1.3em;
-            color: #4682b4;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .dream-input {
-            width: 100%;
-            min-height: 150px;
-            padding: 20px;
-            border: 3px solid #87ceeb;
-            border-radius: 15px;
-            font-size: 1.1em;
-            font-family: 'Tajawal', sans-serif;
-            resize: vertical;
-            box-shadow: 0 5px 15px rgba(135, 206, 250, 0.3);
-            transition: all 0.3s ease;
-            background: #f8fcff;
-        }
-
-        .dream-input:focus {
-            outline: none;
-            border-color: #4682b4;
-            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .interpret-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
-            color: white;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.4em;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(70, 130, 180, 0.4);
-            transition: all 0.3s ease;
-            font-family: 'Tajawal', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .interpret-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .interpret-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .interpret-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(70, 130, 180, 0.5);
-        }
-
-        .interpret-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .interpret-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .loader-container {
-            display: none;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .loader-container.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .loader {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            border: 4px solid rgba(135, 206, 250, 0.3);
-            border-top: 4px solid #4682b4;
-            border-radius: 50%;
-            animation: spin 1.5s linear infinite;
-            position: relative;
-        }
-
-        .loader::before {
-            content: '📜';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-        }
-
-        .loader-text {
-            color: #4682b4;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
-
-        .result-container {
-            display: none;
-            margin-top: 30px;
-            padding: 40px;
-            background: linear-gradient(135deg, #f8fcff 0%, #e6f7ff 100%);
-            border: 3px solid #87ceeb;
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .result-container.active {
-            display: block;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .result-seal {
-            position: absolute;
-            top: -30px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5em;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: 4px solid white;
-        }
-
-        .result-title {
-            font-size: 1.8em;
-            color: #4682b4;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(135, 206, 250, 0.5);
-            font-weight: 700;
-        }
-
-        .result-content {
-            font-family: 'Amiri', serif;
-            font-size: 1.3em;
-            line-height: 2.2;
-            color: #2c3e50;
-            text-align: justify;
-            white-space: pre-wrap;
-        }
-
-        .decorative-border {
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #87ceeb, transparent);
-            margin: 20px 0;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .error-message {
-            display: none;
-            padding: 20px;
-            background: #fee;
-            border: 2px solid #fcc;
-            border-radius: 10px;
-            color: #c33;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .error-message.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .header p {
-                font-size: 1em;
-            }
-
-            .main-card {
-                padding: 25px;
-                border-radius: 20px;
-            }
-
-            .dream-input {
-                min-height: 120px;
-                font-size: 1em;
-            }
-
-            .interpret-btn {
-                font-size: 1.2em;
-                padding: 15px;
-            }
-
-            .result-content {
-                font-size: 1.1em;
-                line-height: 2;
-            }
-
-            .ad-space {
-                height: 70px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-            }
-
-            .header {
-                margin: 20px 0;
-            }
-
-            .header h1 {
-                font-size: 1.6em;
-            }
-
-            .main-card {
-                padding: 20px;
-            }
-
-            .result-seal {
-                width: 60px;
-                height: 60px;
-                top: -20px;
-                right: 20px;
-                font-size: 2em;
-            }
-
-            .ad-space {
-                height: 60px;
-                font-size: 12px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding-bottom: 50px; position: relative; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(135, 206, 250, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 112, 219, 0.1) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+        .ad-space { width: 100%; height: 90px; background: linear-gradient(90deg, #87ceeb 0%, #4682b4 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 500; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: relative; z-index: 10; border-bottom: 3px solid rgba(255,255,255,0.3); }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        .header { text-align: center; margin: 40px 0; animation: fadeInDown 1s ease; }
+        .header h1 { color: white; font-size: 2.8em; margin-bottom: 15px; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); font-weight: 700; }
+        .header p { color: rgba(255,255,255,0.95); font-size: 1.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .main-card { background: white; border-radius: 25px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: fadeInUp 1s ease; position: relative; overflow: hidden; }
+        .input-section { margin-bottom: 30px; }
+        .input-label { display: block; font-size: 1.3em; color: #4682b4; margin-bottom: 15px; font-weight: 600; }
+        .dream-input { width: 100%; min-height: 150px; padding: 20px; border: 3px solid #87ceeb; border-radius: 15px; font-size: 1.1em; font-family: 'Tajawal', sans-serif; resize: vertical; box-shadow: 0 5px 15px rgba(135, 206, 250, 0.3); transition: all 0.3s ease; background: #f8fcff; }
+        .interpret-btn { width: 100%; padding: 18px; background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%); color: white; border: none; border-radius: 15px; font-size: 1.4em; font-weight: 600; cursor: pointer; box-shadow: 0 8px 20px rgba(70, 130, 180, 0.4); transition: all 0.3s ease; font-family: 'Tajawal', sans-serif; position: relative; }
+        .loader-container { display: none; text-align: center; padding: 50px 20px; }
+        .loader-container.active { display: block; }
+        .loader { width: 80px; height: 80px; margin: 0 auto 20px; border: 4px solid rgba(135, 206, 250, 0.3); border-top: 4px solid #4682b4; border-radius: 50%; animation: spin 1.5s linear infinite; position: relative; }
+        .loader::before { content: '📜'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2em; }
+        .result-container { display: none; margin-top: 30px; padding: 40px; background: linear-gradient(135deg, #f8fcff 0%, #e6f7ff 100%); border: 3px solid #87ceeb; border-radius: 20px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .result-container.active { display: block; animation: fadeInUp 0.8s ease; }
+        .result-title { font-size: 1.8em; color: #4682b4; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(135, 206, 250, 0.5); font-weight: 700; }
+        .result-content { font-family: 'Amiri', serif; font-size: 1.3em; line-height: 2.2; color: #2c3e50; text-align: justify; white-space: pre-wrap; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <!-- Ad Space -->
-    <div class="ad-space">
-        <span>📢 مساحة إعلانية - 728x90</span>
-    </div>
-
+    <div class="ad-space"><span>📢 مساحة إعلانية - 728x90</span></div>
     <div class="container">
         <div class="header">
             <h1>🌙 موسوعة تفسير الأحلام 🌙</h1>
             <p>بحسب تفاسير ابن سيرين والنابلسي</p>
         </div>
-
         <div class="main-card">
             <div class="input-section">
                 <label class="input-label">📖 اذكر رؤياك بالتفصيل:</label>
-                <textarea 
-                    class="dream-input" 
-                    id="dreamInput" 
-                    placeholder="اكتب ما رأيته في منامك بأدق التفاصيل..."
-                ></textarea>
+                <textarea class="dream-input" id="dreamInput" placeholder="اكتب ما رأيته في منامك بأدق التفاصيل..."></textarea>
             </div>
-
-            <button class="interpret-btn" id="interpretBtn" onclick="interpretDream()">
-                ✨ استنباط التفسير ✨
-            </button>
-
-            <div class="loader-container" id="loaderContainer">
-                <div class="loader"></div>
-                <div class="loader-text">جارٍ استقراء دلالات الرؤيا...</div>
-            </div>
-
-            <div class="error-message" id="errorMessage"></div>
-
+            <button class="interpret-btn" id="interpretBtn" onclick="interpretDream()">✨ استنباط التفسير ✨</button>
+            <div class="loader-container" id="loaderContainer"><div class="loader"></div><div class="loader-text">جارٍ استقراء دلالات الرؤيا...</div></div>
             <div class="result-container" id="resultContainer">
-                <div class="result-seal">📜</div>
                 <div class="result-title">التفسير المستنبط:</div>
-                <div class="decorative-border"></div>
-                <div class="result-content" id="resultContent"></div>
+                <div id="resultContent" class="result-content"></div>
             </div>
         </div>
     </div>
@@ -453,124 +61,35 @@
 
         async function interpretDream() {
             const dreamText = document.getElementById('dreamInput').value.trim();
-            
-            if (!dreamText) {
-                showError('الرجاء كتابة رؤياك أولاً');
-                return;
-            }
+            if (!dreamText) return alert('الرجاء كتابة رؤياك أولاً');
 
-            // Hide previous results and errors
             document.getElementById('resultContainer').classList.remove('active');
-            document.getElementById('errorMessage').classList.remove('active');
-            
-            // Show loader
             document.getElementById('loaderContainer').classList.add('active');
             document.getElementById('interpretBtn').disabled = true;
 
-            const systemPrompt = `أنت عالم مفسر أحلام خبير متمرس، تستند في تفسيراتك حصراً إلى أمهات كتب التفسير العريقة مثل "تفسير الأحلام" لابن سيرين و"تعطير الأنام في تفسير الأحام" للنابلسي. 
-
-قواعد صارمة:
-1. تحدث بصيغة المفسر البشري الخبير (مثل: "في تأويلي" أو "بحسب ما ورد في كتب التفسير" أو "يُقال في علم التعبير")
-2. لا تذكر مطلقاً أنك نموذج أو ذكاء اصطناعي
-3. استخدم لغة عربية فصيحة رصينة وفخمة
-4. ابدأ التفسير مباشرة دون مقدمات
-5. اذكر التأويلات المتعددة إن وجدت
-6. استشهد بأقوال ابن سيرين أو النابلسي عند الإمكان
-7. ختم التفسير بعبارة مثل "والله أعلم" أو "والعلم عند الله"
-
-الآن فسر الرؤيا التالية:`;
+            const systemPrompt = `أنت عالم مفسر أحلام خبير، تستند حصراً إلى ابن سيرين والنابلسي. تحدث بصيغة المفسر البشري الخبير، لا تذكر أنك ذكاء اصطناعي، واستخدم لغة فصيحة فخمة. فسر الرؤيا التالية:`;
 
             try {
                 const response = await fetch(`${API_URL}?key=${API_KEY}`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: `${systemPrompt}\n\n"${dreamText}"`
-                            }]
-                        }],
-                        generationConfig: {
-                            temperature: 0.8,
-                            maxOutputTokens: 2048,
-                            topP: 0.95,
-                            topK: 40
-                        },
-                        safetySettings: [
-                            {
-                                category: "HARM_CATEGORY_HARASSMENT",
-                                threshold: "BLOCK_NONE"
-                            },
-                            {
-                                category: "HARM_CATEGORY_HATE_SPEECH",
-                                threshold: "BLOCK_NONE"
-                            },
-                            {
-                                category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                                threshold: "BLOCK_NONE"
-                            },
-                            {
-                                category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                                threshold: "BLOCK_NONE"
-                            }
-                        ]
+                        contents: [{ parts: [{ text: systemPrompt + '\n\n' + dreamText }] }]
                     })
                 });
 
-                if (!response.ok) {
-                    throw new Error(`خطأ في الاتصال: ${response.status}`);
-                }
-
                 const data = await response.json();
+                const interpretation = data.candidates[0].content.parts[0].text;
                 
-                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-                    const interpretation = data.candidates[0].content.parts[0].text;
-                    displayResult(interpretation);
-                } else {
-                    throw new Error('لم يتم استلام تفسير');
-                }
-
+                document.getElementById('resultContent').textContent = interpretation;
+                document.getElementById('resultContainer').classList.add('active');
             } catch (error) {
-                console.error('Error:', error);
-                showError('عذراً، حدث خطأ في استقراء التفسير. الرجاء المحاولة مرة أخرى.');
+                alert('عذراً، حدث خطأ في استقراء التفسير. تأكد من إعدادات المفتاح.');
             } finally {
                 document.getElementById('loaderContainer').classList.remove('active');
                 document.getElementById('interpretBtn').disabled = false;
             }
         }
-
-        function displayResult(interpretation) {
-            document.getElementById('resultContent').textContent = interpretation;
-            document.getElementById('resultContainer').classList.add('active');
-            
-            // Smooth scroll to results
-            setTimeout(() => {
-                document.getElementById('resultContainer').scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'nearest' 
-                });
-            }, 100);
-        }
-
-        function showError(message) {
-            const errorDiv = document.getElementById('errorMessage');
-            errorDiv.textContent = message;
-            errorDiv.classList.add('active');
-            
-            setTimeout(() => {
-                errorDiv.classList.remove('active');
-            }, 5000);
-        }
-
-        // Allow Enter key to submit (with Ctrl/Cmd)
-        document.getElementById('dreamInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                interpretDream();
-            }
-        });
     </script>
 </body>
 </html>

@@ -56,9 +56,9 @@
     </div>
 
     <script>
-        // تم تحديث المفتاح الجديد هنا
-        const API_KEY = 'AIzaSyD6hiKO6bPM8Stm3toSol1f4lAddT050gc';
-        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+        // تحديث المفتاح إلى مفتاح OpenRouter الجديد
+        const API_KEY = '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';
+        const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
         async function interpretDream() {
             const dreamText = document.getElementById('dreamInput').value.trim();
@@ -71,27 +71,35 @@
             const systemPrompt = `أنت عالم مفسر أحلام خبير، تستند حصراً إلى ابن سيرين والنابلسي. تحدث بصيغة المفسر البشري الخبير، لا تذكر أنك ذكاء اصطناعي، واستخدم لغة فصيحة فخمة. فسر الرؤيا التالية:`;
 
             try {
-                const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                const response = await fetch(API_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`,
+                        'HTTP-Referer': window.location.href, // متطلب لبعض مفاتيح OpenRouter
+                    },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: systemPrompt + '\n\n' + dreamText }] }]
+                        "model": "alibaba/qwen-2.5-72b-instruct", // استخدام نموذج Qwen
+                        "messages": [
+                            {"role": "system", "content": systemPrompt},
+                            {"role": "user", "content": dreamText}
+                        ]
                     })
                 });
 
                 const data = await response.json();
                 
                 if (data.error) {
-                    throw new Error(data.error.message);
+                    throw new Error(data.error.message || "خطأ غير معروف");
                 }
 
-                const interpretation = data.candidates[0].content.parts[0].text;
+                const interpretation = data.choices[0].message.content;
                 
                 document.getElementById('resultContent').textContent = interpretation;
                 document.getElementById('resultContainer').classList.add('active');
             } catch (error) {
                 console.error(error);
-                alert('عذراً، حدث خطأ في استقراء التفسير. يرجى التأكد من تفعيل المفتاح من Google AI Studio.');
+                alert('عذراً، حدث خطأ في استقراء التفسير. يرجى التأكد من رصيد وصلاحية مفتاح OpenRouter.');
             } finally {
                 document.getElementById('loaderContainer').classList.remove('active');
                 document.getElementById('interpretBtn').disabled = false;

@@ -56,7 +56,8 @@
     </div>
 
     <script>
-        const API_KEY = 'AIzaSyAtEHesVMCKGwzPbHI1TKoNZZI7JyNBJEQ';
+        // تم تحديث المفتاح الجديد هنا
+        const API_KEY = 'AIzaSyD6hiKO6bPM8Stm3toSol1f4lAddT050gc';
         const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
         async function interpretDream() {
@@ -79,12 +80,18 @@
                 });
 
                 const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error.message);
+                }
+
                 const interpretation = data.candidates[0].content.parts[0].text;
                 
                 document.getElementById('resultContent').textContent = interpretation;
                 document.getElementById('resultContainer').classList.add('active');
             } catch (error) {
-                alert('عذراً، حدث خطأ في استقراء التفسير. تأكد من إعدادات المفتاح.');
+                console.error(error);
+                alert('عذراً، حدث خطأ في استقراء التفسير. يرجى التأكد من تفعيل المفتاح من Google AI Studio.');
             } finally {
                 document.getElementById('loaderContainer').classList.remove('active');
                 document.getElementById('interpretBtn').disabled = false;

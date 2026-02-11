@@ -1,612 +1,326 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مفسر الأحلام المتخصص - تفسيرات حقيقية من الكتب</title>
-    <style>
-        /* [نفس التصميم السابق] */
-        :root {
-            --primary: #2c3e50;
-            --secondary: #8e44ad;
-            --accent: #e74c3c;
-            --light: #f9f9f9;
-            --dark: #2c3e50;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', 'Arial', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            border-bottom: 8px solid var(--secondary);
-        }
-        
-        .header h1 {
-            color: var(--primary);
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .header h1:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 25%;
-            width: 50%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 2px;
-        }
-        
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #8e44ad, #3498db);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* بقية التصميم مثل السابق مع تعديلات طفيفة */
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مفسر الأحلام - تفسير ابن سيرين والنابلسي</title>
+
+  <!-- خطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --sky: #7bd3ff;
+      --sky-dark: #4baaec;
+      --deep: #0b2e4a;
+      --gold: #d4af37;
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --border: rgba(0,0,0,.08);
+      --text: #0b1b2b;
+      --muted: #345;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; font-family: 'Tajawal', system-ui, sans-serif; background: linear-gradient(135deg, #e9f6ff 0%, #f7fbff 60%, #eaf4ff 100%); color: var(--text); }
+
+    /* رأس تنفيذي مع مساحة إعلان 90px ثابتة */
+    header.app-header {
+      background: linear-gradient(135deg, var(--sky) 0%, #89d4ff 60%, #a6d0ff 100%);
+      color: #0b1b2b;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      padding: 12px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    header.app-header .brand {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo .mark {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: white; display: grid; place-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+      font-weight: 700; color: var(--deep);
+    }
+    .title {
+      font-family: 'Amiri', serif;
+      font-size: 28px; font-weight: 700; letter-spacing: .2px;
+      margin: 0;
+    }
+    .subtitle {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 12px; opacity: .8;
+    }
+
+    /* إعلان أعلى الصفحة (90px) */
+    .ad-slot {
+      height: 90px; display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.6);
+      border-bottom: 1px solid var(--border);
+    }
+    .ad-slot > span {
+      font-family: 'Tajawal', sans-serif; font-size: 14px; color: #1a2c4a;
+    }
+
+    /* الحاوية الأساسية */
+    main.container {
+      max-width: 1100px; margin: 28px auto; padding: 0 16px;
+    }
+
+    /* واجهة البحث الفخمة */
+    .search-panel {
+      display: grid; gap: 14px; grid-template-columns: 1fr;
+      align-items: center; justify-items: stretch;
+      padding: 18px; border-radius: 14px;
+      background: linear-gradient(135deg, #ffffff 0%, #f1fbff 100%);
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0,0,0,.05);
+    }
+    .search-panel .row { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+
+    .input-wrap {
+      display: flex; gap: 8px; align-items: center;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 8px 12px;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+    }
+    .input-wrap input {
+      width: 100%; border: none; outline: none; font-family: 'Tajawal', sans-serif;
+      font-size: 16px; color: var(--text);
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px 18px; border-radius: 12px;
+      border: none; cursor: pointer;
+      background: linear-gradient(135deg, var(--sky) 0%, #7ab8ff 100%);
+      color: #003056; font-family: 'Amiri', serif; font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    }
+    .btn:disabled {
+      opacity: .6; cursor: not-allowed;
+    }
+
+    .loader {
+      width: 20px; height: 20px; border: 3px solid rgba(0,0,0,.15);
+      border-top-color: #003056; border-radius: 50%; animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* صندوق النتائج التراثي */
+    .result-card {
+      margin-top: 20px; padding: 22px; border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #fff 0%, #fbfbff 100%);
+      box-shadow: 0 6px 22px rgba(0,0,0,.04);
+      font-family: 'Amiri', serif; line-height: 1.9;
+    }
+    .result-title { font-family: 'Amiri', serif; font-size: 28px; margin: 0 0 8px; color: #0b2e4a; }
+    .result-meta { font-family: 'Tajawal', sans-serif; font-size: 12px; color: #5a6b80; margin-bottom: 12px; }
+    .result-content { font-size: 18px; color: #102a43; }
+
+    /*响应/جوال*/
+    @media (max-width: 900px){
+      .title { font-size: 26px; }
+      .result-title { font-size: 24px; }
+      .search-panel { padding: 14px; }
+      .row { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">📚</div>
-            <h1><i class="fas fa-book-quran"></i> مفسر الأحلام المتخصص</h1>
-            <p>تفسيرات حقيقية من كتب: ابن سيرين، النابلسي، ابن شاهين، الكرملي</p>
-            <div class="trust-badge">
-                <span><i class="fas fa-check-circle"></i> مصادر موثوقة</span>
-                <span><i class="fas fa-star"></i> تفسيرات دقيقة</span>
-                <span><i class="fas fa-shield-alt"></i> مدقق علمياً</span>
-            </div>
-        </header>
 
-        <!-- قسم الإدخال الذكي -->
-        <section class="dream-input-section">
-            <div class="input-header">
-                <h2><i class="fas fa-pen-nib"></i> وصف الحلم التفصيلي</h2>
-                <p>اكتب حلمك مع تفاصيل الرموز والألوان والمشاعر</p>
-            </div>
-            
-            <form class="dream-form" id="dreamForm">
-                <div class="form-group">
-                    <label for="dreamText"><i class="fas fa-dream-catcher"></i> النص التفصيلي:</label>
-                    <textarea id="dreamText" placeholder="مثال: رأيت في المنام أنني أسير في بستان مليء بالأشجار المثمرة، وكانت الشمس مشرقة والطقس جميل. رأيت تفاحاً أحمر وتفاحاً أخضر على الأشجار..." rows="5"></textarea>
-                </div>
-                
-                <!-- فئات الأحلام السريعة -->
-                <div class="dream-categories">
-                    <h4><i class="fas fa-tags"></i> اختر الفئات المناسبة:</h4>
-                    <div class="category-tags">
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="water">
-                            <span>ماء/بحر/نهر</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="animals">
-                            <span>حيوانات</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="death">
-                            <span>موت/دفن</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="marriage">
-                            <span>زواج/عرس</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="money">
-                            <span>مال/ذهب/فضة</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="flying">
-                            <span>طيران/سقوط</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="teeth">
-                            <span>أسنان/تساقط</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="category" value="house">
-                            <span>بيت/بناء</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-buttons">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-search"></i> فسر الحلم بدقة
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="showSymbolsGuide()">
-                        <i class="fas fa-book"></i> دليل الرموز
-                    </button>
-                </div>
-            </form>
-        </section>
-
-        <!-- قسم النتائج المحسنة -->
-        <section class="result-section" id="resultSection">
-            <div class="result-header">
-                <h2><i class="fas fa-scroll"></i> التفسير المتخصص</h2>
-                <div class="result-meta">
-                    <span id="interpretationSource">جاري التفسير...</span>
-                    <span id="interpretationConfidence"></span>
-                </div>
-            </div>
-            
-            <div class="interpretation-container">
-                <!-- التفسير من الكتب -->
-                <div class="interpretation-box book-interpretation">
-                    <h3><i class="fas fa-book"></i> من كتب التفسير:</h3>
-                    <div id="bookResult">
-                        <div class="source-tabs">
-                            <button class="source-btn active" onclick="showSource('ibn_sirin')">ابن سيرين</button>
-                            <button class="source-btn" onclick="showSource('alnabolsi')">النابلسي</button>
-                            <button class="source-btn" onclick="showSource('ibn_shahin')">ابن شاهين</button>
-                        </div>
-                        <div class="source-content" id="ibn_sirin">
-                            <!-- سيتم تعبئته بالجافاسكريبت -->
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- التحليل الحديث -->
-                <div class="interpretation-box modern-interpretation">
-                    <h3><i class="fas fa-brain"></i> التحليل النفسي الحديث:</h3>
-                    <div id="modernResult"></div>
-                </div>
-                
-                <!-- النصيحة العملية -->
-                <div class="interpretation-box advice-box">
-                    <h3><i class="fas fa-lightbulb"></i> التوصية العملية:</h3>
-                    <div id="adviceResult"></div>
-                </div>
-            </div>
-        </section>
+  <!-- مساحة إعلان علوية ثابتة 90px -->
+  <header class="app-header" aria-label="رأس الصفحة">
+    <div class="ad-slot" aria-label="إعلان علوى">
+      <span>إعلان: مساحة إعلانية 90px — موفّرة لك؟</span>
     </div>
 
-    <!-- قاعدة بيانات تفسيرات محلية -->
-    <script>
-        // 📚 قاعدة بيانات تفسيرات حقيقية من الكتب
-        const DREAM_DATABASE = {
-            // تفسيرات ابن سيرين
-            ibn_sirin: {
-                water: {
-                    sea: "رؤية البحر في المنام تدل على السلطان. فمن رأى أنه يغوص في البحر ويخرج منه، فإنه يمرض ثم يشفى.",
-                    river: "النهر الجاري دليل على الرزق والعلم. ومن رأى أنه يشرب من نهر عذب، فإنه يحصل على علم نافع.",
-                    rain: "المطر في وقته خير ورزق، والمطر في غير وقته هم وغم."
-                },
-                animals: {
-                    lion: "الأسد في المنام سلطان قوي، ومن رأى أنه يركب أسداً فإنه يغلب عدواً قوياً.",
-                    snake: "الحية عدو، فإن قتلها قضى على عدوه. والحية الصغيرة هم من صديق.",
-                    bird: "الطيور المحلقة تدل على الأخبار السارة، والطير المذبوح دليل على موت."
-                },
-                death: {
-                    self_death: "من رأى أنه ميت ثم حيي، فإنه يرتكب ذنباً ثم يتوب. والموت في المنام سفر.",
-                    others_death: "موت الحي في المنام خير، وموت الميت شر.",
-                    burial: "الدفن في الأرض دليل على السجن أو الهم."
-                },
-                flying: {
-                    high: "الطيران في السماء بلا أجنحة دليل على علو الشأن والمنزلة.",
-                    falling: "السقوط من مكان عالٍ يدل على خسارة منصب أو مال.",
-                    with_wings: "الطيران بأجنحة يدل على سفر وسرعة في الحركة."
-                },
-                teeth: {
-                    falling: "تساقط الأسنان يدل على هموم وغموم. الفك العلوي أهل البيت، والسفلي الأصحاب.",
-                    white: "الأسنان البيضاء الجميدة دليل على قوة الأهل والعشيرة.",
-                    pain: "وجع الأسنان في المنام دليل على غيبة أو شتم."
-                },
-                house: {
-                    big: "البيت الكبير الجديد دليل على سعة في الرزق والعمر.",
-                    old: "البيت القديم دليل على الهموم والأحزان.",
-                    building: "بناء بيت جديد دليل على زواج أو مشروع ناجح."
-                }
-            },
-            
-            // تفسيرات النابلسي
-            alnabolsi: {
-                water: {
-                    sea: "البحر الكثير الماء مال كثير من جهة السلطان، والبحر الهائج خوف من السلطان.",
-                    river: "النهر العذب علم وشرف، والنهر الآسن مرض وهم.",
-                    rain: "المطر في أوانه رزق وبركة، والمطر مع الرعد تغير حال."
-                },
-                marriage: {
-                    self: "الزواج في المنام للمتزوج زيادة في الخير، وللعزب زواج قريب.",
-                    others: "حضور العرس فرح وسرور، والعرس للعزب زواج."
-                },
-                money: {
-                    gold: "الذهب في المنام هم وغم، إلا أن يكون مضروباً فهو علم ونفع.",
-                    silver: "الفضة مال حلال، والدراهم إذا كانت جديدة دلت على ولد."
-                }
-            },
-            
-            // تفسيرات ابن شاهين
-            ibn_shahin: {
-                animals: {
-                    cat: "الهرة في المنام امرأة خؤون، وقتلها التخلص من شرها.",
-                    dog: "الكلب الأسود سحر، والأبيض صديق مخلص.",
-                    horse: "الفرس الجواد رزق وفير، والفرس الهزيل مرض."
-                },
-                colors: {
-                    white: "الأبيض في المنام يدل على الدين والصلاح.",
-                    black: "الأسود يدل على الكفر أو الحزن الشديد.",
-                    green: "الأخضر دليل على الدين والعبادة والعلم.",
-                    red: "الأحمر فرح وسرور، وقد يدل على دم أو حرب."
-                }
-            }
-        };
+    <div class="brand" style="max-width:1100px;margin:0 auto; padding: 8px 0;">
+      <div class="logo">
+        <div class="mark" aria-label="شعار">أر</div>
+        <div>
+          <h1 class="title" style="margin:0;">مفسر الأحلام الملكي</h1>
+          <div class="subtitle">تفسير أحلامك وفق منهج ابن سيرين والنابلسي بأسلوب أدبي رفيع</div>
+        </div>
+      </div>
+      <!-- مساحات إضافية مثل قائمة/أيقونات يمكن إضافتها هنا -->
+    </div>
+  </header>
 
-        // 🧠 نماذج معدة مسبقاً للتفسير
-        const INTERPRETATION_TEMPLATES = {
-            flying: {
-                high: "يقول ابن سيرين: من رأى أنه يطير في الهواء من مكان إلى مكان، فإنه يسافر. ومن طار في السماء بلا أجنحة، فإنه يعلو شأنه ويصيب ولاية.",
-                falling: "السقوط من مكان عال يدل على فقدان منصب أو خسارة مال. والنابلسي يضيف: قد يكون دليلاً على سفر مفاجئ أو تغير في الأحوال."
-            },
-            water: {
-                sea: "البحر في المنام يدل على الحياة الدنيا بسرائها وضرائها. الغرق في البحر مرض، والخروج منه شفاء.",
-                river: "النهر العذب يدل على علم نافع أو رزق واسع. والشرب منه حصول على منفعة أو مال."
-            },
-            animals: {
-                lion: "الأسد سلطان قوي، وركوبه غلبة عدو. الأسد الميت موت سلطان.",
-                snake: "الحية عدو خفي، وقتلها نصر على العدو. الحية الصغيرة هم من قريب."
-            }
-        };
+  <main class="container" role="main">
 
-        // 🔍 محلل النصوص المتخصص
-        class DreamAnalyzer {
-            constructor() {
-                this.keywords = {
-                    water: ['ماء', 'بحر', 'نهر', 'مطر', 'غرق', 'سباحة', 'محيط'],
-                    flying: ['يطير', 'طيران', 'يحلق', 'سقوط', 'يسقط', 'يطير', 'سماء'],
-                    animals: ['أسد', 'كلب', 'قطة', 'طير', 'عصفور', 'حيوان', 'ثعبان'],
-                    death: ['ميت', 'موت', 'دفن', 'قبر', 'جنازة', 'أموات'],
-                    marriage: ['زواج', 'عرس', 'عروس', 'عريس', 'فرح', 'تزويج'],
-                    money: ['ذهب', 'فضة', 'مال', 'نقود', 'دراهم', 'دنانير'],
-                    teeth: ['سن', 'أسنان', 'ضرس', 'تساقط', 'سقوط', 'فك'],
-                    house: ['بيت', 'منزل', 'دار', 'بناء', 'غرفة', 'سقف']
-                };
-            }
-            
-            analyze(dreamText) {
-                const categories = [];
-                const symbols = [];
-                const details = {
-                    colors: [],
-                    numbers: [],
-                    emotions: []
-                };
-                
-                // تحليل النص للكلمات المفتاحية
-                const text = dreamText.toLowerCase();
-                
-                for (const [category, words] of Object.entries(this.keywords)) {
-                    for (const word of words) {
-                        if (text.includes(word)) {
-                            if (!categories.includes(category)) {
-                                categories.push(category);
-                            }
-                            symbols.push({category, symbol: word});
-                        }
-                    }
-                }
-                
-                // استخراج الألوان
-                const colors = ['أحمر', 'أخضر', 'أزرق', 'أصفر', 'أبيض', 'أسود', 'ذهبي', 'فضي'];
-                colors.forEach(color => {
-                    if (text.includes(color)) details.colors.push(color);
-                });
-                
-                // استخراج الأرقام
-                const numbers = text.match(/\d+/g) || [];
-                details.numbers = numbers;
-                
-                // تحليل المشاعر
-                const positiveWords = ['سعيد', 'فرح', 'ضحك', 'جمال', 'نور', 'مشرق'];
-                const negativeWords = ['خوف', 'حزن', 'بكاء', 'ظلام', 'ألم', 'خسارة'];
-                
-                details.emotions = {
-                    positive: positiveWords.filter(word => text.includes(word)).length,
-                    negative: negativeWords.filter(word => text.includes(word)).length
-                };
-                
-                return {
-                    categories,
-                    symbols,
-                    details,
-                    score: this.calculateScore(categories, details.emotions)
-                };
-            }
-            
-            calculateScore(categories, emotions) {
-                let score = 50; // متوسط
-                score += categories.length * 5;
-                score += (emotions.positive * 10);
-                score -= (emotions.negative * 10);
-                return Math.min(100, Math.max(0, score));
-            }
-            
-            // البحث في قاعدة البيانات
-            searchDatabase(categories, symbols) {
-                const results = {
-                    ibn_sirin: [],
-                    alnabolsi: [],
-                    ibn_shahin: []
-                };
-                
-                symbols.forEach(symbolObj => {
-                    const {category, symbol} = symbolObj;
-                    
-                    // البحث في ابن سيرين
-                    if (DREAM_DATABASE.ibn_sirin[category] && DREAM_DATABASE.ibn_sirin[category][symbol]) {
-                        results.ibn_sirin.push({
-                            symbol,
-                            interpretation: DREAM_DATABASE.ibn_sirin[category][symbol],
-                            confidence: 'عالية'
-                        });
-                    }
-                    
-                    // البحث في النابلسي
-                    if (DREAM_DATABASE.alnabolsi[category] && DREAM_DATABASE.alnabolsi[category][symbol]) {
-                        results.alnabolsi.push({
-                            symbol,
-                            interpretation: DREAM_DATABASE.alnabolsi[category][symbol],
-                            confidence: 'متوسطة'
-                        });
-                    }
-                });
-                
-                return results;
-            }
-            
-            // إنشاء تفسير منظم
-            generateInterpretation(analysis, databaseResults) {
-                const interpretation = {
-                    book: this.formatBookInterpretation(databaseResults),
-                    modern: this.generateModernAnalysis(analysis),
-                    advice: this.generateAdvice(analysis),
-                    confidence: analysis.score
-                };
-                
-                return interpretation;
-            }
-            
-            formatBookInterpretation(results) {
-                let html = '';
-                
-                // ابن سيرين
-                if (results.ibn_sirin.length > 0) {
-                    html += '<div class="interpretation-source">';
-                    html += '<h4><i class="fas fa-book-open"></i> تفسير ابن سيرين:</h4>';
-                    results.ibn_sirin.forEach(item => {
-                        html += `<div class="interpretation-item">
-                            <strong>${item.symbol}:</strong> ${item.interpretation}
-                            <span class="confidence-badge">${item.confidence}</span>
-                        </div>`;
-                    });
-                    html += '</div>';
-                }
-                
-                // النابلسي
-                if (results.alnabolsi.length > 0) {
-                    html += '<div class="interpretation-source">';
-                    html += '<h4><i class="fas fa-book"></i> تفسير النابلسي:</h4>';
-                    results.alnabolsi.forEach(item => {
-                        html += `<div class="interpretation-item">
-                            <strong>${item.symbol}:</strong> ${item.interpretation}
-                            <span class="confidence-badge">${item.confidence}</span>
-                        </div>`;
-                    });
-                    html += '</div>';
-                }
-                
-                return html || '<p>لم يتم العثور على تفسير مباشر في الكتب. حاول وصف الحلم بمزيد من التفاصيل.</p>';
-            }
-            
-            generateModernAnalysis(analysis) {
-                const {categories, details, score} = analysis;
-                
-                let html = '<div class="modern-analysis">';
-                html += '<h4>تحليل الرموز:</h4>';
-                
-                if (categories.length > 0) {
-                    html += '<p><strong>الفئات الرئيسية:</strong> ' + categories.join('، ') + '</p>';
-                }
-                
-                if (details.colors.length > 0) {
-                    html += '<p><strong>الألوان:</strong> ' + details.colors.join('، ') + '</p>';
-                    
-                    // تفسير الألوان
-                    const colorMeanings = {
-                        'أحمر': 'فرح، طاقة، حب (وقد يدل على دم أو حرب)',
-                        'أخضر': 'دين، أمل، نمو، رزق',
-                        'أزرق': 'صفاء، سلام، عمق',
-                        'أصفر': 'مرض، حذر، ذكاء',
-                        'أبيض': 'نقاء، صلاح، فرح',
-                        'أسود': 'حزن، كرب، قد يدل على علم',
-                        'ذهبي': 'مال، جاه، منصب',
-                        'فضي': 'علم، حكمة، أنثى'
-                    };
-                    
-                    details.colors.forEach(color => {
-                        if (colorMeanings[color]) {
-                            html += `<small>• ${color}: ${colorMeanings[color]}</small><br>`;
-                        }
-                    });
-                }
-                
-                html += `<p><strong>مؤشر المشاعر:</strong> `;
-                if (details.emotions.positive > details.emotions.negative) {
-                    html += 'إيجابي بشكل عام</p>';
-                } else if (details.emotions.negative > details.emotions.positive) {
-                    html += 'سلبي بشكل عام</p>';
-                } else {
-                    html += 'متوازن</p>';
-                }
-                
-                html += `<p><strong>درجة الثقة في التفسير:</strong> ${score}%</p>`;
-                html += '</div>';
-                
-                return html;
-            }
-            
-            generateAdvice(analysis) {
-                const {score, details} = analysis;
-                
-                let advice = '';
-                
-                if (score >= 70) {
-                    advice = 'هذا التفسير ذو مصداقية عالية. يمكنك الاعتماد عليه في فهم دلالات حلمك.';
-                } else if (score >= 40) {
-                    advice = 'التفسير معقول لكنه يحتاج لمزيد من التفاصيل للحصول على تفسير أدق.';
-                } else {
-                    advice = 'حاول تذكر المزيد من التفاصيل عن حلمك للحصول على تفسير أفضل.';
-                }
-                
-                // نصيحة حسب المشاعر
-                if (details.emotions.negative > 3) {
-                    advice += ' يبدو أن الحلم يحمل مشاعر سلبية، حاول التركيز على الجوانب الإيجابية في حياتك.';
-                } else if (details.emotions.positive > 3) {
-                    advice += ' الحلم يحمل بشائر طيبة، استبشر بالخير واستمر في مسيرتك.';
-                }
-                
-                advice += ' تذكر أن تفسير الأحلام للاسترشاد وليس للحتمية.';
-                
-                return advice;
-            }
+    <!-- واجهة البحث -->
+    <section class="search-panel" aria-label="واجهة البحث والتفسير">
+      <div class="row" style="align-items:center;">
+        <div class="input-wrap" style="flex:1;">
+          <span aria-hidden="true" style="color:#2b6cb0;">🔎</span>
+          <input id="dream-input" type="text" placeholder="اكتب حلمك هنا ثم اضغط استنباط التفسير..." inputmode="text" />
+        </div>
+        <button id="infer-btn" class="btn" type="button" aria-label="استنباط التفسير">
+          استنباط التفسير
+        </button>
+      </div>
+      <div id="status" style="min-height:20px; color:#2b3a54; font-family:'Tajawal', sans-serif; font-size:14px;"></div>
+    </section>
+
+    <!-- صندوق النتائج التراثي -->
+    <section id="result-area" class="result-card" aria-label="النتيجة">
+      <h2 class="result-title" style="display:none;" id="result-title">تفسير الحلم</h2>
+      <div class="result-meta" id="result-meta" style="display:none;">
+        <!-- معلومات ميتا توضع هنا -->
+      </div>
+      <div class="result-content" id="result-content" style="display:none;">
+        <!-- التفسير سيظهر هنا -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // إعدادات عامة
+    const API_KEY = "AIzaSyAtEHesVMCKGwzPbHI1TKoNZZI7JyNBJEQ"; // ضع مفتاح API هنا بشكل آمن في بيئة حقيقية
+    const MODEL = "gemini-1.5-flash";
+
+    const input = document.getElementById('dream-input');
+    const btn   = document.getElementById('infer-btn');
+    const statusEl = document.getElementById('status');
+    const resTitle = document.getElementById('result-title');
+    const resMeta  = document.getElementById('result-meta');
+    const resBody  = document.getElementById('result-content');
+    const resultArea = document.getElementById('result-area');
+
+    // تهيئة النتائج مخفية حتى تبدأ الاستنتاج
+    function clearResult() {
+      resTitle.style.display = 'none';
+      resMeta.style.display = 'none';
+      resBody.style.display = 'none';
+      resBody.innerHTML = '';
+    }ز
+    clearResult();
+
+    // إنشاء Loader DOM
+    function showLoader() {
+      const loader = document.createElement('span');
+      loader.className = 'loader';
+      loader.setAttribute('aria-label','قيد المعالجة');
+      return loader;
+    }
+
+    // وظيفة الطلب إلى Google AI Studio
+    async function fetchInterpretation(prompt) {
+      // بناء الطلب وفق تنسيق Google AI Studio REST (اعتماداً على النموذج gemini-1.5-flash)
+      // ملاحظة: قد تحتاج إلى تعديل الـ endpoint وفق التوثيق الحالي.
+      // هذا المثال يوضح بنية الطلب الأساسي POST.
+      const endpoint = `https://API.AI.STUDIO/v1/models/${MODEL}:predict`;
+
+      // جسم الطلب
+      const body = {
+        apiKey: API_KEY,
+        prompt: prompt,
+        parameters: {
+          // حسب متطلبات النموذج، أضف المعلمات المناسبة
         }
+      };
 
-        // 🎯 التنفيذ الرئيسي
-        document.addEventListener('DOMContentLoaded', function() {
-            const analyzer = new DreamAnalyzer();
-            const dreamForm = document.getElementById('dreamForm');
-            
-            dreamForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const dreamText = document.getElementById('dreamText').value;
-                
-                if (dreamText.length < 20) {
-                    alert('الرجاء وصف الحلم بمزيد من التفاصيل (على الأقل 20 حرفاً)');
-                    return;
-                }
-                
-                // التحليل
-                const analysis = analyzer.analyze(dreamText);
-                const databaseResults = analyzer.searchDatabase(analysis.categories, analysis.symbols);
-                const interpretation = analyzer.generateInterpretation(analysis, databaseResults);
-                
-                // عرض النتائج
-                displayResults(interpretation, analysis);
-            });
+      // استقبال الرد
+      try {
+        const resp = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
         });
 
-        function displayResults(interpretation, analysis) {
-            // عرض تفسير الكتب
-            document.querySelector('#ibn_sirin').innerHTML = interpretation.book;
-            
-            // عرض التحليل الحديث
-            document.getElementById('modernResult').innerHTML = interpretation.modern;
-            
-            // عرض النصيحة
-            document.getElementById('adviceResult').innerHTML = interpretation.advice;
-            
-            // تحديث مصدر التفسير
-            const sources = [];
-            if (interpretation.book.includes('ابن سيرين')) sources.push('ابن سيرين');
-            if (interpretation.book.includes('النابلسي')) sources.push('النابلسي');
-            
-            document.getElementById('interpretationSource').innerHTML = 
-                `مصادر: ${sources.join('، ') || 'تحليل حديث'}`;
-            
-            document.getElementById('interpretationConfidence').innerHTML = 
-                `ثقة: ${interpretation.confidence}%`;
-            
-            // إظهار قسم النتائج
-            document.getElementById('resultSection').style.display = 'block';
+        if (!resp.ok) {
+          const text = await resp.text();
+          throw new Error(`فشل الاتصال: ${resp.status} ${resp.statusText} - ${text}`);
         }
+        const data = await resp.json();
+        // يعتمد التنسيق على استجابة النموذج فعلياً
+        // افترض أن النص تفسير في data.choices[0].text أو data.predictions[0].output حسب التوثيق
+        const text = extractPrediction(data);
+        return text;
+      } catch (err) {
+        throw err;
+      }
+    }
 
-        function showSource(sourceId) {
-            // إخفاء كل المحتويات
-            document.querySelectorAll('.source-content').forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            // إزالة النشاط من كل الأزرار
-            document.querySelectorAll('.source-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // إظهار المصدر المطلوب
-            document.getElementById(sourceId).style.display = 'block';
-            
-            // تفعيل الزر
-            event.target.classList.add('active');
-        }
+    // مستخرج مبسط من بنية الرد المحتملة
+    function extractPrediction(data) {
+      // هذه مجرد فرضية؛ عدّلها وفق الرد الحقيقي من API
+      // مثال: data.choices[0].text
+      if (data && data.choices && data.choices.length > 0 && data.choices[0].text) {
+        return data.choices[0].text.trim();
+      }
+      // مثال بديل:
+      if (data && data.predictions && data.predictions.length > 0 && data.predictions[0].output) {
+        return data.predictions[0].output.trim();
+      }
+      // فشل استخراج
+      return "تم استلام الرد، لكن لم نتمكن من استخراج التفسير بشكل صحيح. يرجى المحاولة لاحقاً.";
+    }
 
-        function showSymbolsGuide() {
-            const guide = `
-                <div class="symbols-guide">
-                    <h3><i class="fas fa-key"></i> دليل رموز الأحلام</h3>
-                    <div class="symbols-grid">
-                        <div class="symbol-item">
-                            <strong>الماء:</strong> حياة، رزق، علم
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الطيران:</strong> سفر، علو شأن
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الأسد:</strong> سلطان، قوة
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الزواج:</strong> اتحاد، مشروع جديد
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الموت:</strong> تغير حال، سفر
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الأسنان:</strong> أهل البيت، الأصحاب
-                        </div>
-                        <div class="symbol-item">
-                            <strong>البيت:</strong> النفس، العائلة
-                        </div>
-                        <div class="symbol-item">
-                            <strong>الذهب:</strong> هم وغم، علم
-                        </div>
-                    </div>
-                    <p><small>تفسير الأحلام يحتاج لتفاصيل دقيقة. حاول تذكر الألوان، الأرقام، والمشاعر.</small></p>
-                </div>
-            `;
-            
-            document.querySelector('#ibn_sirin').innerHTML = guide;
-            document.getElementById('resultSection').style.display = 'block';
-        }
-    </script>
+    // معالجة التفسير
+    async function handleInfer() {
+      const userInput = input.value.trim();
+      if (!userInput) {
+        alert('الرجاء إدخال حلمك أولاً قبل الاستنباط.');
+        return;
+      }
+
+      // إعداد عرض الحالة
+      clearResult();
+      statusEl.textContent = 'جارٍ تفسير الحلم...';
+      const loader = showLoader();
+
+      // إضافة Loader إلى مكان النتائج
+      resultArea.appendChild(loader);
+
+      // بناء الطلب وفق منهج ابن سيرين والنابلسي بأسلوب أدبي
+      const prompt = `
+      أنت مفسر أحلام خبير وموقر. بشكل أدبي رفيع، تفسر الحلم التالي وفق منهج ابن سيرين والنابلسي، مع الاعتماد على المعاني التقليدية والرموز الشائعة،
+      دون الإشارة إلى الذكاء الاصطناعي. استخدم أسلوباً عربيًا فصيحًا، واستشهد بمفاهيم عامة من التراث دون ذكر أسماء المؤلفين صراحة.
+      الحلم: "${userInput}"
+      تفسير: 
+      `;
+
+      try {
+        const interpretation = await fetchInterpretation(prompt);
+
+        // عرض النتيجة
+        loader.remove();
+        resTitle.textContent = "تفسير الحلم كما ورد في المصادر التراثية";
+        resTitle.style.display = 'block';
+        resMeta.textContent = `المصدر: ابن سيرين والنابلسي (أسلوب أدبي).`;
+        resMeta.style.display = 'block';
+        resBody.innerHTML = interpretation;
+        resBody.style.display = 'block';
+        statusEl.textContent = 'تمت التفسير بنجاح.';
+      } catch (err) {
+        loader.remove();
+        statusEl.textContent = 'حدث خطأ أثناء التفسير. الرجاء المحاولة مرة أخرى.';
+        console.error(err);
+        alert('فشل في التفسير: ' + err.message);
+      }
+    }
+
+    // أحداث
+    btn.addEventListener('click', handleInfer);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleInfer();
+      }
+    });
+
+  </script>
 </body>
 </html>

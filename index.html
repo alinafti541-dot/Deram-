@@ -56,8 +56,8 @@
     </div>
 
     <script>
-        // تحديث المفتاح إلى مفتاح OpenRouter الجديد
-        const API_KEY = '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';
+        // تم تحديث المفتاح الجديد هنا
+        const API_KEY = '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';
         const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
         async function interpretDream() {
@@ -76,10 +76,10 @@
                     headers: { 
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${API_KEY}`,
-                        'HTTP-Referer': window.location.href, // متطلب لبعض مفاتيح OpenRouter
+                        'HTTP-Referer': window.location.href,
                     },
                     body: JSON.stringify({
-                        "model": "alibaba/qwen-2.5-72b-instruct", // استخدام نموذج Qwen
+                        "model": "alibaba/qwen-2.5-72b-instruct",
                         "messages": [
                             {"role": "system", "content": systemPrompt},
                             {"role": "user", "content": dreamText}
@@ -90,7 +90,7 @@
                 const data = await response.json();
                 
                 if (data.error) {
-                    throw new Error(data.error.message || "خطأ غير معروف");
+                    throw new Error(data.error.message || "خطأ في المفتاح أو الخدمة");
                 }
 
                 const interpretation = data.choices[0].message.content;
@@ -99,7 +99,7 @@
                 document.getElementById('resultContainer').classList.add('active');
             } catch (error) {
                 console.error(error);
-                alert('عذراً، حدث خطأ في استقراء التفسير. يرجى التأكد من رصيد وصلاحية مفتاح OpenRouter.');
+                alert('عذراً، حدث خطأ في استقراء التفسير. يرجى التأكد من صلاحية مفتاح OpenRouter الجديد.');
             } finally {
                 document.getElementById('loaderContainer').classList.remove('active');
                 document.getElementById('interpretBtn').disabled = false;
